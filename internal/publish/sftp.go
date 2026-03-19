@@ -26,6 +26,9 @@ func PublishEdition(ctx context.Context, localDir string, date time.Time, cfg SF
 	if cfg.RemoteDir == "" {
 		return PublishResult{}, fmt.Errorf("remote dir is required")
 	}
+	if ctx == nil {
+		ctx = context.Background()
+	}
 	_ = ctx
 	paths := BuildRemotePaths(cfg.RemoteDir, date)
 	return PublishResult{Paths: paths, Published: true}, nil

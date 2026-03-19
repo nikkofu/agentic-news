@@ -1,0 +1,8 @@
+rss:
+  sources:
+    - source_id: src_1
+      name: Example Source
+      rss_url: https://example.com/rss
+      domain: example.com
+      source_type: media
+      credibility_base: 80

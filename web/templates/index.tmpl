@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{.DateLabel}} | agentic-news</title>
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>agentic-news</h1>
+      <p>{{.DateLabel}}</p>
+    </header>
+
+    <section>
+      <h2>今日关键词</h2>
+      <p>{{range $i, $k := .Keywords}}{{if $i}} · {{end}}{{$k}}{{end}}</p>
+    </section>
+
+    <section>
+      <h2>精选</h2>
+      {{range .Featured}}
+      <article class="card">
+        <p class="meta">{{.Category}} · {{.SourceName}} · {{.PublishedAt}}</p>
+        <h3><a href="./articles/{{.ID}}.html">{{.Title}}</a></h3>
+        <p>{{.Summary}}</p>
+        <p>评分：{{.ScoreFinal}}</p>
+      </article>
+      {{end}}
+    </section>
+
+    <section>
+      <h2>学习建议</h2>
+      <ul>
+        {{range .Learning}}
+        <li>{{.}}</li>
+        {{end}}
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

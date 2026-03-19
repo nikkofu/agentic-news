@@ -1,0 +1,6 @@
+weights:
+  importance: 0.30
+  personal_relevance: 0.25
+  credibility: 0.20
+  novelty: 0.15
+  freshness: 0.10

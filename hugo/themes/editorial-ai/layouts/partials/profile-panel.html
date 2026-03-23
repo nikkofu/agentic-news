@@ -1,0 +1,11 @@
+<section class="profile-panel" data-side-note="profile" data-profile-panel>
+  <h2>当前兴趣画像</h2>
+  <p>基于这篇内容，当前画像会围绕以下维度更新：</p>
+  <ul data-profile-summary>
+    {{ range .TopicTags }}<li>主题：{{ . }}</li>{{ end }}
+    {{ range .StyleTags }}<li>风格：{{ . }}</li>{{ end }}
+    {{ range .CognitiveTags }}<li>认知：{{ . }}</li>{{ end }}
+    {{ if and (eq (len .TopicTags) 0) (eq (len .StyleTags) 0) (eq (len .CognitiveTags) 0) }}<li>暂无标签，提交反馈后会尝试补全画像。</li>{{ end }}
+  </ul>
+  <p class="meta" data-profile-updated>提交反馈后会尝试刷新最新画像摘要。</p>
+</section>

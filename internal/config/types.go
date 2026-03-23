@@ -25,7 +25,8 @@ type ScoreWeights struct {
 }
 
 type RSSConfig struct {
-	Sources []RSSSource `yaml:"sources"`
+	Sources   []RSSSource `yaml:"sources"`
+	OPMLFiles []string    `yaml:"opml_files"`
 }
 
 type RSSSource struct {

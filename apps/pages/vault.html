@@ -1,0 +1,189 @@
+<div class="relative h-[calc(100vh-80px)] md:h-[calc(100vh-64px)] flex flex-col md:flex-row w-full overflow-hidden bg-background">
+    <!-- Knowledge Graph Canvas (70%) -->
+    <section class="relative flex-grow h-[50vh] md:h-full overflow-hidden cursor-move border-b md:border-b-0 md:border-r border-outline-variant/20">
+        <!-- Background Texture Layer -->
+        <div class="absolute inset-0 opacity-[0.4] pointer-events-none cognitive-grid"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-surface/50 to-primary/5 pointer-events-none"></div>
+
+        <!-- Controls overlay on canvas -->
+        <div class="absolute top-6 left-6 z-30 flex gap-2">
+            <button class="w-10 h-10 bg-white shadow-sm border border-outline-variant/30 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors">
+                <span class="material-symbols-outlined">zoom_in</span>
+            </button>
+            <button class="w-10 h-10 bg-white shadow-sm border border-outline-variant/30 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors">
+                <span class="material-symbols-outlined">zoom_out</span>
+            </button>
+        </div>
+
+        <!-- Nodes and Connections Simulation -->
+        <div class="relative w-full h-full flex items-center justify-center">
+            
+            <!-- Connection Lines -->
+            <div class="absolute w-40 h-[2px] knowledge-line rotate-[340deg] translate-x-20 -translate-y-12 origin-left transition-all duration-[3000ms] hover:opacity-100 opacity-60"></div>
+            <div class="absolute w-48 h-[2px] knowledge-line rotate-[220deg] -translate-x-16 -translate-y-24 origin-right transition-all duration-[3000ms] hover:opacity-100 opacity-50"></div>
+            <div class="absolute w-56 h-[2px] knowledge-line rotate-[170deg] -translate-x-28 translate-y-6 origin-right transition-all duration-[3000ms] hover:opacity-100 opacity-70"></div>
+            
+            <div class="absolute w-64 h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent rotate-45 translate-x-32 translate-y-32"></div>
+
+            <!-- Central Node -->
+            <div class="absolute group z-20 hover:scale-110 transition-transform duration-500">
+                <div class="w-20 h-20 rounded-full bg-white border-2 border-primary node-glow flex items-center justify-center relative cursor-pointer active:scale-95 transition-transform shadow-[0_0_30px_rgba(3,25,46,0.15)] overflow-hidden">
+                    <div class="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors"></div>
+                    <span class="material-symbols-outlined text-primary text-4xl" data-icon="psychology">psychology</span>
+                </div>
+                <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white/80 backdrop-blur px-3 py-1 rounded-full border border-outline-variant/20 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="font-headline text-primary text-[13px] font-bold tracking-wide block">Cognitive Resonance</span>
+                </div>
+            </div>
+
+            <!-- Orbital Nodes -->
+            <!-- Node 1 -->
+            <div class="absolute translate-x-40 -translate-y-28 group z-10 hover:z-30 hover:scale-110 transition-transform duration-500">
+                <div class="w-14 h-14 rounded-full bg-white border-2 border-[#4d635f] node-glow flex items-center justify-center cursor-pointer hover:bg-secondary-container transition-colors shadow-md">
+                    <span class="material-symbols-outlined text-[#4d635f] text-2xl" data-icon="auto_stories">auto_stories</span>
+                </div>
+                <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap font-body text-surface bg-[#4d635f] px-2 py-0.5 rounded text-[10px] uppercase tracking-widest font-bold shadow-sm">Philosophy</span>
+            </div>
+
+            <!-- Node 2 -->
+            <div class="absolute -translate-x-36 -translate-y-48 group z-10 hover:z-30 hover:scale-110 transition-transform duration-500">
+                <div class="w-16 h-16 rounded-full bg-white border-2 border-primary node-glow flex items-center justify-center cursor-pointer bg-primary-container text-on-primary-container hover:bg-primary hover:text-white transition-colors shadow-lg">
+                    <span class="material-symbols-outlined text-2xl" data-icon="terminal">terminal</span>
+                </div>
+                <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap font-body text-surface bg-primary px-2 py-0.5 rounded text-[10px] uppercase tracking-widest font-bold shadow-sm">Techno-Ethics</span>
+            </div>
+
+            <!-- Node 3 -->
+            <div class="absolute -translate-x-56 translate-y-20 group z-10 hover:z-30 hover:scale-110 transition-transform duration-500">
+                <div class="w-12 h-12 rounded-full bg-surface-container-low border border-[#7e9d72] node-glow flex items-center justify-center cursor-pointer hover:bg-[#caecbc] transition-colors shadow-md">
+                    <span class="material-symbols-outlined text-[#7e9d72] text-xl" data-icon="nature">nature</span>
+                </div>
+                <span class="absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap font-body text-[#324e2a] bg-[#caecbc] border border-[#7e9d72]/30 px-2 py-0.5 rounded text-[9px] uppercase tracking-widest font-bold">Bio-Mimicry</span>
+            </div>
+
+            <!-- Distant small nodes -->
+            <div class="absolute translate-x-64 translate-y-32 w-4 h-4 rounded-full bg-primary/20 border border-primary/40"></div>
+            <div class="absolute -translate-x-72 -translate-y-12 w-6 h-6 rounded-full bg-secondary/20 border border-secondary/40 flex items-center justify-center"><div class="w-2 h-2 rounded-full bg-secondary/60"></div></div>
+            <div class="absolute translate-x-12 translate-y-48 w-8 h-8 rounded-full bg-outline-variant/20 border border-outline-variant/40 backdrop-blur-sm"></div>
+        </div>
+
+        <!-- Focus Shield (Overlay for AI Drawer) -->
+        <div class="absolute bottom-6 md:bottom-12 right-6 md:right-8 w-[calc(100%-48px)] md:w-full md:max-w-sm bg-white/95 backdrop-blur-xl border border-outline-variant/30 rounded-2xl p-6 md:p-8 shadow-[0_20px_60px_rgba(3,25,46,0.15)] transition-transform duration-500 z-40 transform translate-y-0" id="knowledge-drawer">
+            <div class="flex justify-between items-start mb-6">
+                <div class="pr-6">
+                    <span class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary mb-2 block font-bold">Contextual Analysis</span>
+                    <h2 class="font-headline text-xl md:text-2xl text-primary font-bold leading-tight">Stoic Resilience &amp; Digital Fasting</h2>
+                </div>
+                <button class="text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-full p-1 -mr-2 -mt-2 transition-colors">
+                    <span class="material-symbols-outlined" data-icon="close">close</span>
+                </button>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="p-5 bg-surface-container-low rounded-xl border border-outline-variant/20 shadow-sm">
+                    <h3 class="font-label text-xs font-bold text-primary uppercase tracking-widest mb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm text-secondary">auto_awesome</span> AI Summary
+                    </h3>
+                    <p class="font-body text-sm leading-relaxed text-on-surface-variant">
+                        Synthesizing Marcus Aurelius's "Meditations" with modern cognitive load theory. The node suggests that voluntary technological abstinence acts as a contemporary 'premeditatio malorum', strengthening the user's focus sanctuary.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="font-label text-[10px] md:text-xs font-bold text-primary uppercase tracking-widest mb-3">Your Reflections</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-2 border-primary/20 pl-4 py-1 hover:border-primary transition-colors cursor-pointer group">
+                            <p class="font-body text-xs italic text-on-surface-variant group-hover:text-primary transition-colors">"Implemented 2-hour offline blocks this week. Observed 40% reduction in mental fatigue."</p>
+                            <span class="text-[9px] text-outline font-bold uppercase tracking-wider mt-2 block">April 12, Level IV Log</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="w-full py-4 bg-primary text-white rounded-xl font-label text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-primary-container transition-colors shadow-lg shadow-primary/20 active:scale-95">
+                    Deepen Connection <span class="material-symbols-outlined text-sm" data-icon="north_east">north_east</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Controls Sidebar (30%) -->
+    <aside class="w-full md:w-96 lg:w-[420px] bg-background border-l border-outline-variant/20 p-8 md:p-10 overflow-y-auto z-40 h-full custom-scrollbar flex flex-col">
+        <div class="mb-10 shrink-0">
+            <h2 class="font-headline text-3xl md:text-4xl text-primary font-bold mb-3 tracking-tight">Vault Filters</h2>
+            <p class="font-body text-sm text-secondary font-light">Calibrate the resonance of your knowledge field.</p>
+        </div>
+        
+        <div class="space-y-10 flex-grow">
+            <!-- Discipline Filter -->
+            <div class="space-y-5">
+                <label class="font-label text-xs font-extrabold uppercase tracking-[0.2em] text-primary block flex items-center gap-2"><span class="material-symbols-outlined text-sm">filter_list</span> Disciplines</label>
+                <div class="flex flex-wrap gap-2.5">
+                    <button class="px-5 py-2 bg-primary text-white rounded-lg text-xs font-bold shadow-md hover:shadow-lg transition-all">All Nodes</button>
+                    <button class="px-5 py-2 bg-white text-on-surface-variant border border-outline-variant/40 rounded-lg text-xs font-bold hover:border-primary hover:text-primary transition-colors">Philosophy</button>
+                    <button class="px-5 py-2 bg-white text-on-surface-variant border border-outline-variant/40 rounded-lg text-xs font-bold hover:border-primary hover:text-primary transition-colors">Technology</button>
+                    <button class="px-5 py-2 bg-white text-on-surface-variant border border-outline-variant/40 rounded-lg text-xs font-bold hover:border-primary hover:text-primary transition-colors">Biology</button>
+                    <button class="px-5 py-2 bg-white text-on-surface-variant border border-outline-variant/40 rounded-lg text-xs font-bold hover:border-primary hover:text-primary transition-colors">Economics</button>
+                </div>
+            </div>
+            
+            <!-- Density Slider -->
+            <div class="space-y-5 bg-surface-container-low p-6 rounded-2xl border border-outline-variant/10">
+                <div class="flex justify-between items-center mb-2">
+                    <label class="font-label text-xs font-extrabold uppercase tracking-[0.2em] text-primary">Connection Density</label>
+                    <span class="text-xs font-headline font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">75%</span>
+                </div>
+                <div class="relative w-full h-8 flex items-center">
+                    <input class="w-full h-2 bg-surface-container-highest rounded-full appearance-none cursor-pointer accent-primary relative z-10" max="100" min="0" type="range" value="75"/>
+                    <div class="absolute left-0 h-2 bg-primary rounded-l-full pointer-events-none z-0" style="width: 75%;"></div>
+                </div>
+            </div>
+            
+            <!-- Timeline Scrubber -->
+            <div class="space-y-5">
+                <label class="font-label text-xs font-extrabold uppercase tracking-[0.2em] text-primary block flex items-center gap-2"><span class="material-symbols-outlined text-sm">history</span> Chronology</label>
+                <div class="grid grid-cols-4 gap-3 mt-4">
+                    <div class="h-20 bg-white border border-outline-variant/30 rounded-xl flex flex-col items-center justify-center p-2 text-center group cursor-pointer hover:border-primary transition-all shadow-sm">
+                        <span class="text-[10px] text-secondary font-bold group-hover:text-primary transition-colors">2023</span>
+                    </div>
+                    <div class="h-20 bg-white border border-outline-variant/30 rounded-xl flex flex-col items-center justify-center p-2 text-center group cursor-pointer hover:border-primary transition-all shadow-sm">
+                        <span class="text-[10px] text-secondary font-bold group-hover:text-primary transition-colors">2024</span>
+                    </div>
+                    <div class="h-20 bg-primary-container border border-primary/20 rounded-xl flex flex-col items-center justify-center p-2 text-center group cursor-pointer shadow-md relative overflow-hidden">
+                        <div class="absolute inset-0 bg-primary/5"></div>
+                        <span class="text-[11px] text-primary font-black relative z-10">2025</span>
+                    </div>
+                    <div class="h-20 bg-primary border border-primary rounded-xl flex flex-col items-center justify-center p-2 text-center shadow-lg relative overflow-hidden group cursor-pointer">
+                        <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                        <span class="text-[11px] text-white font-black relative z-10">2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Meta Info Cards (Asymmetric Layout) -->
+        <div class="pt-10 pb-6 space-y-6 shrink-0 border-t border-outline-variant/20 mt-8">
+            <div class="bg-white border border-surface-container-highest p-6 rounded-2xl md:ml-4 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-lg">query_stats</span>
+                    </div>
+                    <span class="font-headline font-bold text-primary text-lg">Map Health</span>
+                </div>
+                <p class="text-[13px] text-secondary leading-relaxed font-light">Your knowledge graph has <b class="font-bold">12</b> orphan nodes requiring synthesis. Cognitive load is balanced at <b class="font-bold">42%</b>.</p>
+            </div>
+            
+            <div class="bg-primary p-6 rounded-2xl md:mr-4 text-surface shadow-[0_10px_30px_rgba(3,25,46,0.2)] scholarly-gradient relative overflow-hidden">
+                <div class="absolute right-0 top-0 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
+                            <span class="material-symbols-outlined text-primary-fixed text-lg">account_tree</span>
+                        </div>
+                        <span class="font-headline font-bold text-lg">Active Cluster</span>
+                    </div>
+                    <p class="text-[13px] text-primary-fixed leading-relaxed font-light"><b class="font-bold text-white">Ethics of Decentralized AI</b> is currently your most interconnected domain.</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+</div>

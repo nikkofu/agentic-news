@@ -5,13 +5,20 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"time"
 
 	"github.com/nikkofu/agentic-news/internal/model"
 )
 
 func DatePath(baseDir string, date model.DailyEdition) string {
 	y, m, d := date.Date.Date()
-	return filepath.Join(baseDir, fmt.Sprintf("%04d", y), fmt.Sprintf("%02d", int(m)), fmt.Sprintf("%02d", d))
+	themeID := model.NormalizeThemeID(date.ThemeID)
+	return filepath.Join(baseDir, themeID, fmt.Sprintf("%04d", y), fmt.Sprintf("%02d", int(m)), fmt.Sprintf("%02d", d))
+}
+
+func PackagePath(baseDir string, date time.Time) string {
+	y, m, d := date.Date()
+	return filepath.Join(baseDir, "_packages", fmt.Sprintf("%04d", y), fmt.Sprintf("%02d", int(m)), fmt.Sprintf("%02d", d))
 }
 
 func EnsureDateDirs(baseDir string, daily model.DailyEdition) (string, error) {
@@ -26,6 +33,14 @@ func EnsureDateDirs(baseDir string, daily model.DailyEdition) (string, error) {
 		return "", err
 	}
 	return root, nil
+}
+
+func ResetDateDir(baseDir string, daily model.DailyEdition) (string, error) {
+	root := DatePath(baseDir, daily)
+	if err := os.RemoveAll(root); err != nil {
+		return "", err
+	}
+	return EnsureDateDirs(baseDir, daily)
 }
 
 func WriteJSON(path string, v any) error {

@@ -1,0 +1,52 @@
+{{ $item := .Item }}
+{{ $id := printf "%v" (index $item "ID") }}
+<article class="{{ .CardClass }}"{{ with .HomeRegion }} data-home-region="{{ . }}"{{ end }}
+  data-feature-role="{{ .Role }}"
+  data-article-id="{{ $id }}"
+  data-card-type="standard"
+  data-topic-tags='{{ jsonify (default (slice) (index $item "TopicTags")) }}'
+  data-style-tags='{{ jsonify (default (slice) (index $item "StyleTags")) }}'
+  data-cognitive-tags='{{ jsonify (default (slice) (index $item "CognitiveTags")) }}'>
+  <p class="meta">{{ default "未分类" (index $item "Category") }} · {{ default "来源待补充" (index $item "SourceName") }} · {{ with index $item "PublishedAt" }}{{ $raw := printf "%v" . }}{{ if and (ne $raw "") (ne $raw "0001-01-01T00:00:00Z") (ne $raw "0001-01-01 00:00:00 +0000 UTC") }}{{ time.Format "2006-01-02 15:04 MST" (time.AsTime .) }}{{ else }}时间待定{{ end }}{{ else }}时间待定{{ end }}</p>
+  {{ if eq .HeadingTag "h2" }}
+    <h2><a
+      href="./articles/{{ $id }}.html"
+      data-track-event="article_click"
+      data-article-id="{{ $id }}"
+      data-article-title="{{ default "未命名条目" (index $item "Title") }}"
+      data-card-type="standard"
+      data-source-name="{{ default "来源待补充" (index $item "SourceName") }}"
+      data-source-url="{{ default "#" (index $item "SourceURL") }}"
+      data-edition-date="{{ .DateLabel }}"
+      data-topic-tags='{{ jsonify (default (slice) (index $item "TopicTags")) }}'
+      data-style-tags='{{ jsonify (default (slice) (index $item "StyleTags")) }}'
+      data-cognitive-tags='{{ jsonify (default (slice) (index $item "CognitiveTags")) }}'>{{ default "未命名条目" (index $item "Title") }}</a></h2>
+  {{ else }}
+    <h3><a
+      href="./articles/{{ $id }}.html"
+      data-track-event="article_click"
+      data-article-id="{{ $id }}"
+      data-article-title="{{ default "未命名条目" (index $item "Title") }}"
+      data-card-type="standard"
+      data-source-name="{{ default "来源待补充" (index $item "SourceName") }}"
+      data-source-url="{{ default "#" (index $item "SourceURL") }}"
+      data-edition-date="{{ .DateLabel }}"
+      data-topic-tags='{{ jsonify (default (slice) (index $item "TopicTags")) }}'
+      data-style-tags='{{ jsonify (default (slice) (index $item "StyleTags")) }}'
+      data-cognitive-tags='{{ jsonify (default (slice) (index $item "CognitiveTags")) }}'>{{ default "未命名条目" (index $item "Title") }}</a></h3>
+  {{ end }}
+  {{ if .ShowCover }}
+    {{ with index $item "CoverImageLocal" }}
+      {{ if hasPrefix (printf "%v" .) "assets/images/" }}
+        <img src="./{{ . }}" alt="cover" class="cover" />
+      {{ else }}
+        {{ with index $item "CoverImage" }}<img src="{{ . }}" alt="cover" class="cover" />{{ end }}
+      {{ end }}
+    {{ else }}
+      {{ with index $item "CoverImage" }}<img src="{{ . }}" alt="cover" class="cover" />{{ end }}
+    {{ end }}
+  {{ end }}
+  <p>{{ default "暂无摘要" (index $item "Summary") }}</p>
+  <p>评分：{{ printf "%.1f" (default 0.0 (index $item "ScoreFinal")) }}</p>
+  <p><a href="{{ default "#" (index $item "SourceURL") }}" target="_blank" rel="noopener noreferrer">查看原文</a></p>
+</article>

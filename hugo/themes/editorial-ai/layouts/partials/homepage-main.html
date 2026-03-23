@@ -1,0 +1,54 @@
+{{ $featured := default (slice) (index .Site.Data.daily "Featured") }}
+{{ $editionDate := time.Format "2006-01-02" (time.AsTime (index .Site.Data.daily "Date")) }}
+{{ $keywords := default (default (slice) (index .Params "keywords")) (index .Site.Data.daily "Keywords") }}
+<main class="container editorial-homepage editorial-ambient" data-layout="editorial-homepage">
+  {{ partial "hero.html" (dict "DateLabel" $editionDate "Keywords" $keywords) }}
+
+  <section class="homepage-upper" data-home-region="lead-and-rail">
+    {{ if gt (len $featured) 0 }}
+      {{ $lead := index $featured 0 }}
+      {{ if eq (lower (printf "%v" (default "standard" (index $lead "CardType")))) "brief" }}
+        {{ partial "card-brief.html" (dict "Item" $lead "Role" "lead" "CardClass" "card card-lead editorial-lead-story" "HeadingTag" "h2" "HomeRegion" "lead-story" "DateLabel" $editionDate "ShowCover" true) }}
+      {{ else }}
+        {{ partial "card-standard.html" (dict "Item" $lead "Role" "lead" "CardClass" "card card-lead editorial-lead-story" "HeadingTag" "h2" "HomeRegion" "lead-story" "DateLabel" $editionDate "ShowCover" true) }}
+      {{ end }}
+    {{ else }}
+      <article class="card card-lead editorial-lead-story" data-home-region="lead-story" data-feature-role="lead">
+        <h2>主编领读位正在准备中</h2>
+      </article>
+    {{ end }}
+
+    <aside class="secondary-rail" data-home-region="secondary-rail">
+      {{ range $index, $item := $featured }}
+        {{ if and (gt $index 0) (or (and (gt (len $featured) 4) (lt $index 3)) (and (le (len $featured) 4) (eq $index 1))) }}
+          {{ if eq (lower (printf "%v" (default "standard" (index $item "CardType")))) "brief" }}
+            {{ partial "card-brief.html" (dict "Item" $item "Role" "secondary" "CardClass" "card card-secondary" "HeadingTag" "h3" "DateLabel" $editionDate "ShowCover" false) }}
+          {{ else }}
+            {{ partial "card-standard.html" (dict "Item" $item "Role" "secondary" "CardClass" "card card-secondary" "HeadingTag" "h3" "DateLabel" $editionDate "ShowCover" false) }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </aside>
+  </section>
+
+  <section class="supporting-grid" data-home-region="supporting-grid">
+    {{ range $index, $item := $featured }}
+      {{ if or (and (gt (len $featured) 4) (ge $index 3)) (and (le (len $featured) 4) (ge $index 2)) }}
+        {{ if eq (lower (printf "%v" (default "standard" (index $item "CardType")))) "brief" }}
+          {{ partial "card-brief.html" (dict "Item" $item "Role" "supporting" "CardClass" "card card-supporting" "HeadingTag" "h3" "DateLabel" $editionDate "ShowCover" false) }}
+        {{ else }}
+          {{ partial "card-standard.html" (dict "Item" $item "Role" "supporting" "CardClass" "card card-supporting" "HeadingTag" "h3" "DateLabel" $editionDate "ShowCover" false) }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </section>
+
+  <section class="learning-strip">
+    <h2>学习建议</h2>
+    <ul>
+      {{ range default (slice) (index .Site.Data.learning "learning") }}
+        <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+  </section>
+</main>

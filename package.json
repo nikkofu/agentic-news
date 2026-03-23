@@ -1,0 +1,13 @@
+{
+  "name": "agentic-news",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:styles": "tailwindcss -i ./web/tailwind/input.css -o ./web/static/styles.css --minify",
+    "verify:styles": "sh -c 'tmp=$(mktemp); tailwindcss -i ./web/tailwind/input.css -o \"$tmp\" --minify >/dev/null; diff -q \"$tmp\" ./web/static/styles.css >/dev/null; status=$?; rm -f \"$tmp\"; if [ $status -ne 0 ]; then echo \"web/static/styles.css is stale. Run npm run build:styles\"; exit 1; fi'"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

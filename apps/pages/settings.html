@@ -1,0 +1,128 @@
+<div class="max-w-7xl mx-auto px-8 py-12 md:py-20 flex flex-col md:flex-row gap-12">
+    <!-- Navigation Drawer / Sidebar -->
+    <aside class="w-full md:w-80 shrink-0">
+        <div class="flex flex-col h-full py-0 gap-y-4">
+            <!-- Header Type: Profile -->
+            <div class="mb-8 pl-4">
+                <div class="flex flex-col items-start gap-2">
+                    <h2 class="text-2xl font-headline text-primary">The Control Room</h2>
+                    <div class="flex flex-col">
+                        <span class="text-sm font-bold text-on-surface">Head Curator</span>
+                        <span class="text-xs text-on-surface-variant">Premium Scholar • Est. 2024</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Nav Items -->
+            <nav class="space-y-2">
+                <a class="flex items-center gap-3 text-on-surface-variant pl-4 py-3 hover:bg-surface-variant/30 transition-all rounded-r-xl" href="#">
+                    <span class="material-symbols-outlined text-lg">shield_person</span>
+                    <span class="font-body text-sm font-bold">Account Security</span>
+                </a>
+                <a class="flex items-center gap-3 text-on-surface-variant pl-4 py-3 hover:bg-surface-variant/30 transition-all rounded-r-xl" href="#">
+                    <span class="material-symbols-outlined text-lg">notifications</span>
+                    <span class="font-body text-sm font-bold">Notification Preferences</span>
+                </a>
+                <a class="flex items-center gap-3 text-on-surface-variant pl-4 py-3 hover:bg-surface-variant/30 transition-all rounded-r-xl" href="#">
+                    <span class="material-symbols-outlined text-lg">ios_share</span>
+                    <span class="font-body text-sm font-bold">Data Export</span>
+                </a>
+                <a class="flex items-center gap-3 text-primary font-semibold border-l-4 border-primary pl-4 py-3 bg-surface-variant/40 rounded-r-xl" href="#">
+                    <span class="material-symbols-outlined text-lg">receipt_long</span>
+                    <span class="font-body text-sm font-bold">Subscription &amp; Billing</span>
+                </a>
+                <a class="flex items-center gap-3 text-on-surface-variant pl-4 py-3 hover:bg-surface-variant/30 transition-all rounded-r-xl" href="#">
+                    <span class="material-symbols-outlined text-lg">tune</span>
+                    <span class="font-body text-sm font-bold">System Settings</span>
+                </a>
+            </nav>
+        </div>
+    </aside>
+    <!-- Content Canvas -->
+    <section class="flex-1 space-y-12">
+        <!-- Bento Grid Style Billing Info -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Current Plan Card -->
+            <div class="col-span-1 md:col-span-2 bg-primary text-surface p-8 rounded-xl flex flex-col justify-between min-h-[240px] shadow-lg">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-primary-fixed-dim">Current Tier</span>
+                    <h3 class="text-3xl font-headline mt-2 mb-4 text-surface">Scholar Monthly</h3>
+                    <p class="text-surface/70 max-w-md text-sm leading-relaxed">Unlimited access to the Great Library, advanced predictive analytics, and priority scholarly insights.</p>
+                </div>
+                <div class="flex items-center gap-4 mt-6">
+                    <button class="bg-primary-container hover:bg-primary-container/80 text-surface px-6 py-2.5 rounded-lg text-sm font-bold shadow-sm transition-colors" onclick="window.location.hash='#/checkout'">Manage Plan</button>
+                    <span class="text-xs text-surface/40 italic">Renews next month</span>
+                </div>
+            </div>
+            <!-- Quick Stats -->
+            <div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/30 flex flex-col justify-center shadow-sm">
+                <span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Next Payment</span>
+                <div class="text-3xl font-headline text-primary mt-1 mb-4">$19.00</div>
+                <div class="bg-surface-container rounded-lg p-3 flex items-center gap-3 border border-outline-variant/10">
+                    <span class="material-symbols-outlined text-primary text-xl">credit_card</span>
+                    <div class="text-[11px]">
+                        <div class="font-bold text-on-surface tracking-wide">Visa ending in 4242</div>
+                        <div class="text-on-surface-variant">Expires 12/26</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Billing History -->
+        <div class="space-y-6">
+            <div class="flex items-baseline justify-between border-b border-primary/10 pb-4">
+                <h3 class="text-2xl font-headline text-primary">Billing History</h3>
+                <button class="text-primary text-xs tracking-wider uppercase font-bold flex items-center gap-1 hover:text-secondary transition-colors">
+                    <span class="material-symbols-outlined text-sm">download</span>
+                    Download PDF
+                </button>
+            </div>
+            <div class="space-y-2">
+                <!-- Billing Item -->
+                <div class="group flex flex-wrap md:flex-nowrap items-center justify-between py-5 px-4 rounded-xl hover:bg-surface-container transition-colors border border-transparent hover:border-outline-variant/20">
+                    <div class="flex items-center gap-6 w-full md:w-auto">
+                        <div class="text-on-surface-variant font-mono text-xs bg-black/5 px-2 py-1 rounded">#SANCT-8892</div>
+                        <div class="flex flex-col">
+                            <span class="font-bold text-on-surface text-sm">Subscription Renewal</span>
+                            <span class="text-[11px] text-on-surface-variant mt-0.5">Processed via Stripe</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-12 w-full md:w-auto mt-4 md:mt-0 justify-between md:justify-end">
+                        <span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Sept 12, 2024</span>
+                        <span class="font-bold text-primary">$19.00</span>
+                        <span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[9px] font-extrabold uppercase tracking-widest shadow-sm">Paid</span>
+                        <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">description</button>
+                    </div>
+                </div>
+                <div class="group flex flex-wrap md:flex-nowrap items-center justify-between py-5 px-4 rounded-xl hover:bg-surface-container transition-colors border border-transparent hover:border-outline-variant/20 bg-surface-container-low">
+                    <div class="flex items-center gap-6 w-full md:w-auto">
+                        <div class="text-on-surface-variant font-mono text-xs bg-black/5 px-2 py-1 rounded">#SANCT-7104</div>
+                        <div class="flex flex-col">
+                            <span class="font-bold text-on-surface text-sm">Initial Verification</span>
+                            <span class="text-[11px] text-on-surface-variant mt-0.5">Magic Link Setup</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-12 w-full md:w-auto mt-4 md:mt-0 justify-between md:justify-end">
+                        <span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Aug 15, 2024</span>
+                        <span class="font-bold text-primary">$0.00</span>
+                        <span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[9px] font-extrabold uppercase tracking-widest shadow-sm">Paid</span>
+                        <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">description</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Focus Shield Component -->
+        <div class="rounded-xl overflow-hidden bg-surface-container-high border border-outline-variant/20 p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-inner">
+            <div class="max-w-md">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-secondary text-lg">archive</span>
+                    <span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Data Portability</span>
+                </div>
+                <h4 class="text-xl font-headline mb-2 text-primary">Cognitive Archiving</h4>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Download your complete data archive including all scholarly notes, interaction history, and curated paths for local storage as Markdown or JSON.</p>
+            </div>
+            <button class="whitespace-nowrap bg-primary text-surface px-8 py-3.5 rounded-xl font-bold text-sm flex items-center gap-3 group transition-all hover:bg-primary/90 shadow-md hover:shadow-lg active:scale-95">
+                Generate Archive
+                <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">database</span>
+            </button>
+        </div>
+    </section>
+</div>

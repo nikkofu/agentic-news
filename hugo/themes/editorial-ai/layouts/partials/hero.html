@@ -1,0 +1,6 @@
+<header class="header editorial-masthead editorial-glass-hero" data-home-region="masthead">
+  <p class="kicker">agentic-news · editorial-ai</p>
+  <h1>今日编辑精选</h1>
+  <p>{{ .DateLabel }}</p>
+  <p>{{ range $index, $keyword := .Keywords }}{{ if $index }} · {{ end }}{{ $keyword }}{{ end }}</p>
+</header>

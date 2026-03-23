@@ -20,14 +20,27 @@ func TestDedupe_RemovesCanonicalDuplicates(t *testing.T) {
 	}
 }
 
-func TestDedupe_UsesTitleHashFallback(t *testing.T) {
+
+func TestDedupe_NormalizesQueryAndTrailingSlash(t *testing.T) {
 	items := []model.RawItem{
-		{Title: "Same Title", URL: ""},
-		{Title: " same   title ", URL: ""},
+		{Title: "A", URL: "https://example.com/news/a/?utm_source=x"},
+		{Title: "A dup", URL: "https://example.com/news/a"},
 	}
 
 	got := rss.Dedupe(items)
 	if len(got) != 1 {
-		t.Fatalf("expected 1 unique item by title hash, got %d", len(got))
+		t.Fatalf("expected URL variants to dedupe into 1 item, got %d", len(got))
+	}
+}
+
+func TestDedupe_PreservesMeaningfulQueryParameters(t *testing.T) {
+	items := []model.RawItem{
+		{Title: "A", URL: "https://example.com/news?id=1"},
+		{Title: "B", URL: "https://example.com/news?id=2"},
+	}
+
+	got := rss.Dedupe(items)
+	if len(got) != 2 {
+		t.Fatalf("expected meaningful query params to remain distinct, got %d", len(got))
 	}
 }

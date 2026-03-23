@@ -1,0 +1,225 @@
+<div class="public-profile-wrapper w-full relative bg-background text-on-surface flex flex-col min-h-screen">
+    <!-- TopAppBar -->
+    <header class="bg-[#fef9f0] dark:bg-[#03192e] w-full px-8 py-4 max-w-screen-2xl mx-auto border-none sticky top-0 z-50">
+        <div class="flex justify-between items-center w-full">
+            <div class="flex items-center gap-6">
+                <!-- Change to back button, similar to other standalone pages -->
+                <a href="#/home" class="text-[#03192e] dark:text-[#f2ede4] hover:bg-[#e7e2d9]/30 transition-colors p-2 rounded-full flex items-center justify-center">
+                    <span class="material-symbols-outlined shrink-0" data-icon="close">close</span>
+                </a>
+                <h1 class="text-2xl font-headline italic text-[#03192e] dark:text-[#f2ede4] font-light tracking-wide">The Curator</h1>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-[#03192e] dark:text-[#f2ede4] font-bold font-body text-xs tracking-widest uppercase" href="#">Sanctuary</a>
+                <a class="text-[#4d635f] dark:text-[#e7e2d9] font-body text-xs tracking-widest uppercase opacity-70 hover:opacity-100 transition-opacity" href="#">Guild</a>
+                <a class="text-[#4d635f] dark:text-[#e7e2d9] font-body text-xs tracking-widest uppercase opacity-70 hover:opacity-100 transition-opacity" href="#">Artifacts</a>
+            </nav>
+            <div class="flex items-center gap-4 hidden sm:flex">
+                <img alt="Scholar Profile" class="w-10 h-10 rounded-full object-cover ring-2 ring-surface-container-highest" data-alt="Close up portrait of a distinguished scholar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKDn8VW4cpiy8EUvLjSosWNth7kCjTojlBx2mA07a1rBJFrD0GNsg81lXGT8_6_1ZX-dZsaUltJrjR1X87IsrbAhZnytKlbA7kSUrgzqf3N0yvZjwEZYtYrBr-y6GPKIZAD5Z6YkxbAXPF7wPqICZXWJXj-jbhaHd7YoPM9simPhxWDHqY6jSI3-wsZpp4KFVAc2Bn37Dojsicbs45Ta9b8UZBNj3w_hX4oaysfEVb0CrWYBk9SHK3dJ8W5F8a7ZD2b1PgkOePOP8"/>
+            </div>
+        </div>
+    </header>
+    <div class="bg-[#f2ede4] dark:bg-[#1a2e44] h-[1px] w-full relative z-50"></div>
+
+    <main class="flex-grow max-w-7xl mx-auto w-full px-8 md:px-20 py-16">
+        <!-- Profile Header Section -->
+        <section class="flex flex-col xl:flex-row items-start justify-between gap-12 mb-20">
+            <div class="flex flex-col sm:flex-row gap-8 items-center sm:items-start text-center sm:text-left">
+                <div class="relative">
+                    <img alt="Aethelgard" class="w-32 h-32 md:w-40 md:h-40 rounded-xl object-cover shadow-sm" data-alt="Professional portrait of a scholar with a neutral expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsp3iJDEerYwvcWAyqGQV-_NQ3RmHLAdElyVvp7022fAIOhiudn6CyU-xfL2v9EEMpVQ7rYYLdnfXKaLpDwGzgxEcGJxUcYHB8h59FHA_j8J045PRx6FDRmY-GDQvaDT_ftUpR10eWDZO-kN5cqeOVskVy4m_2kBA-ig_mXhpsU0ROx9R-9RK0H-oV9hcwevnRw1KByA7t1K8XUopij4bwJAApKp0P7lSQMwXf3XZV87VgF7mcJkTOtoxcFaJoPKQ_kGe9tAYi-SY"/>
+                    <div class="absolute -bottom-3 -right-3 bg-primary text-on-primary p-2 rounded-lg scholar-gradient">
+                        <span class="material-symbols-outlined text-sm" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 pt-2">
+                    <h2 class="text-4xl md:text-5xl font-headline font-light tracking-tight text-primary">Aethelgard</h2>
+                    <p class="text-secondary font-body text-lg tracking-wide">Socrates Tier Scholar</p>
+                    <div class="flex items-center gap-4 mt-2 justify-center sm:justify-start">
+                        <span class="text-xs font-label uppercase tracking-widest text-outline-variant">Est. 2026</span>
+                        <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+                        <span class="text-xs font-label uppercase tracking-widest text-outline-variant">Berlin, DE</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-4 w-full xl:w-auto justify-center xl:justify-end">
+                <button class="scholar-gradient text-on-primary px-8 py-3 rounded-xl font-label text-sm font-medium tracking-wide shadow-lg hover:opacity-90 transition-all active:scale-95">
+                    Request Access
+                </button>
+                <button class="bg-surface-container-high text-primary px-4 py-3 rounded-xl hover:bg-surface-container-highest transition-colors">
+                    <span class="material-symbols-outlined" data-icon="share">share</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Cognitive Map Visualization -->
+        <section class="mb-24">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 bg-surface-container-low rounded-[2rem] p-8 md:p-12 relative overflow-hidden cognitive-grid aspect-square md:aspect-video flex items-center justify-center">
+                    <!-- Embedded SVG Chart -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <svg class="w-full max-w-sm sm:max-w-md opacity-80" viewbox="0 0 400 400">
+                            <!-- Background Web -->
+                            <polygon fill="none" points="200,40 360,120 360,280 200,360 40,280 40,120" stroke="#c4c6cd" stroke-width="0.5"></polygon>
+                            <polygon fill="none" points="200,80 320,140 320,260 200,320 80,260 80,140" stroke="#c4c6cd" stroke-width="0.5"></polygon>
+                            <polygon fill="none" points="200,120 280,160 280,240 200,280 120,240 120,160" stroke="#c4c6cd" stroke-width="0.5"></polygon>
+                            <line stroke="#c4c6cd" stroke-width="0.5" x1="200" x2="200" y1="200" y2="40"></line>
+                            <line stroke="#c4c6cd" stroke-width="0.5" x1="200" x2="360" y1="200" y2="120"></line>
+                            <line stroke="#c4c6cd" stroke-width="0.5" x1="200" x2="360" y1="200" y2="280"></line>
+                            <line stroke="#c4c6cd" stroke-width="0.5" x1="200" x2="200" y1="200" y2="360"></line>
+                            <line stroke="#c4c6cd" stroke-width="0.5" x1="200" x2="40" y1="200" y2="280"></line>
+                            <line stroke="#c4c6cd" stroke-width="0.5" x1="200" x2="40" y1="200" y2="120"></line>
+                            
+                            <!-- Expertise Shape -->
+                            <polygon fill="rgba(3, 25, 46, 0.08)" points="200,60 340,130 290,270 200,340 70,250 100,140" stroke="#03192e" stroke-width="2"></polygon>
+                            
+                            <!-- Labels -->
+                            <text class="uppercase tracking-widest" fill="#4d635f" font-family="Manrope" font-size="10" font-weight="600" text-anchor="middle" x="200" y="30">Philosophy</text>
+                            <text class="uppercase tracking-widest" fill="#4d635f" font-family="Manrope" font-size="10" font-weight="600" text-anchor="start" x="370" y="125">Architecture</text>
+                            <text class="uppercase tracking-widest" fill="#4d635f" font-family="Manrope" font-size="10" font-weight="600" text-anchor="start" x="370" y="285">Neural Networks</text>
+                            <text class="uppercase tracking-widest" fill="#4d635f" font-family="Manrope" font-size="10" font-weight="600" text-anchor="middle" x="200" y="380">Ethics</text>
+                            <text class="uppercase tracking-widest" fill="#4d635f" font-family="Manrope" font-size="10" font-weight="600" text-anchor="end" x="30" y="285">Linguistics</text>
+                            <text class="uppercase tracking-widest" fill="#4d635f" font-family="Manrope" font-size="10" font-weight="600" text-anchor="end" x="30" y="125">Cartography</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="space-y-4">
+                        <h3 class="text-3xl font-headline text-primary">Cognitive Map</h3>
+                        <p class="text-on-surface-variant leading-relaxed text-lg italic font-light">
+                            "Aethelgard's expertise bridges the gap between classical philosophical inquiry and the structural rigors of neural architecture."
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-surface-container-highest p-5 rounded-xl flex flex-col gap-3">
+                            <span class="material-symbols-outlined text-secondary" data-icon="auto_stories">auto_stories</span>
+                            <div>
+                                <h4 class="font-label font-bold text-xs uppercase tracking-tighter text-primary">Scholarly Depth</h4>
+                                <p class="text-2xl font-headline text-primary">Level 84</p>
+                            </div>
+                        </div>
+                        <div class="bg-surface-container-highest p-5 rounded-xl flex flex-col gap-3">
+                            <span class="material-symbols-outlined text-secondary" data-icon="hub" style="font-variation-settings: 'FILL' 1;">hub</span>
+                            <div>
+                                <h4 class="font-label font-bold text-xs uppercase tracking-tighter text-primary">Connections</h4>
+                                <p class="text-2xl font-headline text-primary">1,204</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Badges -->
+        <section class="mb-24">
+            <h3 class="text-xs font-label uppercase tracking-[0.3em] text-outline mb-10 text-center">Mastery Domain Badges</h3>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16">
+                <!-- Badges -->
+                <div class="flex flex-col items-center gap-4 text-center group">
+                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-surface-container-high flex items-center justify-center relative transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 border border-outline-variant/30 rounded-full scale-125"></div>
+                        <span class="material-symbols-outlined text-3xl text-primary" data-icon="account_balance">account_balance</span>
+                    </div>
+                    <span class="font-headline italic text-primary text-sm md:text-base">Platonic Order</span>
+                </div>
+                <!-- Badge 2 -->
+                <div class="flex flex-col items-center gap-4 text-center group">
+                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-secondary-container flex items-center justify-center relative transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 border border-secondary/20 rounded-full scale-125"></div>
+                        <span class="material-symbols-outlined text-3xl text-on-secondary-container" data-icon="memory">memory</span>
+                    </div>
+                    <span class="font-headline italic text-primary text-sm md:text-base">Neural Logic</span>
+                </div>
+                <!-- Badge 3 -->
+                <div class="flex flex-col items-center gap-4 text-center group">
+                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-surface-container-high flex items-center justify-center relative transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 border border-outline-variant/30 rounded-full scale-125"></div>
+                        <span class="material-symbols-outlined text-3xl text-primary" data-icon="architecture">architecture</span>
+                    </div>
+                    <span class="font-headline italic text-primary text-sm md:text-base">Spatial Ethics</span>
+                </div>
+                <!-- Badge 4 -->
+                <div class="flex flex-col items-center gap-4 text-center group">
+                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-surface-container-high flex items-center justify-center relative transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 border border-outline-variant/30 rounded-full scale-125"></div>
+                        <span class="material-symbols-outlined text-3xl text-primary" data-icon="public">public</span>
+                    </div>
+                    <span class="font-headline italic text-primary text-sm md:text-base">Digital Cartography</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Public Feed / Artifacts -->
+        <section class="mb-24">
+            <div class="flex items-center justify-between mb-10">
+                <h3 class="text-3xl font-headline text-primary">Public Artifacts</h3>
+                <a class="text-xs sm:text-sm font-label uppercase tracking-widest text-secondary hover:text-primary transition-colors flex items-center gap-2" href="#">
+                    View Compendium <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Artifact Card 1 -->
+                <div class="bg-surface-container p-8 rounded-2xl hover:bg-surface-container-high transition-all group cursor-pointer">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="text-[10px] font-label uppercase tracking-[0.2em] text-outline">Journal Entry · Oct 24</span>
+                        <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="north_east">north_east</span>
+                    </div>
+                    <h4 class="text-xl md:text-2xl font-headline text-primary mb-4 leading-tight">The Ontology of Latent Spaces: Where Meaning Resides in Noise</h4>
+                    <p class="text-on-surface-variant font-light mb-6">Exploration of how Large Language Models mirror medieval Scholasticism in their categorization of universal concepts...</p>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] uppercase font-label tracking-tighter font-bold text-secondary">Philosophy</span>
+                        <span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] uppercase font-label tracking-tighter font-bold text-secondary">AI</span>
+                    </div>
+                </div>
+                <!-- Artifact Card 2 -->
+                <div class="bg-surface-container p-8 rounded-2xl hover:bg-surface-container-high transition-all group cursor-pointer">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="text-[10px] font-label uppercase tracking-[0.2em] text-outline">Blueprint · Sep 12</span>
+                        <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="north_east">north_east</span>
+                    </div>
+                    <h4 class="text-xl md:text-2xl font-headline text-primary mb-4 leading-tight">Civic Sanctuaries: Reimagining Public Libraries for the AI Age</h4>
+                    <p class="text-on-surface-variant font-light mb-6">A structural proposal for physical spaces designed specifically for deep cognitive engagement and focus restoration...</p>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] uppercase font-label tracking-tighter font-bold text-secondary">Architecture</span>
+                        <span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] uppercase font-label tracking-tighter font-bold text-secondary">Civic Design</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="bg-primary text-on-primary rounded-[2.5rem] p-12 md:p-20 scholar-gradient text-center overflow-hidden relative">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none cognitive-grid"></div>
+            <div class="relative z-10 max-w-2xl mx-auto space-y-8">
+                <h3 class="text-4xl md:text-5xl font-headline font-light">Begin Your Own Curation</h3>
+                <p class="text-on-primary-container text-lg leading-relaxed font-light">
+                    Join Aethelgard and 4,000 other scholars in the Atrium. Build your cognitive map and fragment your mind into meaningful artifacts.
+                </p>
+                <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-surface text-primary px-10 py-4 rounded-xl font-label text-sm font-bold tracking-widest uppercase hover:bg-surface-container-high transition-colors">
+                        Join the Atrium
+                    </button>
+                    <button class="border border-on-primary/20 text-on-primary px-10 py-4 rounded-xl font-label text-sm font-bold tracking-widest uppercase hover:bg-on-primary/10 transition-colors">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-[#c4c6cd]/15 bg-[#fef9f0] dark:bg-[#03192e] py-12 px-8">
+        <div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div class="flex flex-col gap-2 items-center md:items-start">
+                <span class="font-headline italic text-sm text-[#4d635f] dark:text-[#e7e2d9]">The Curator</span>
+                <p class="font-body text-[10px] tracking-widest uppercase text-[#4d635f] dark:text-[#e7e2d9] opacity-70">
+                    © 2026 The Curator. For the fragmented mind.
+                </p>
+            </div>
+            <nav class="flex flex-wrap justify-center md:justify-end gap-6 md:gap-8">
+                <a class="font-body text-xs tracking-widest uppercase text-[#4d635f] dark:text-[#e7e2d9] opacity-70 hover:opacity-100 transition-opacity" href="#/landing">The Threshold</a>
+                <a class="font-body text-xs tracking-widest uppercase text-[#4d635f] dark:text-[#e7e2d9] opacity-70 hover:opacity-100 transition-opacity" href="#">Privacy Codex</a>
+                <a class="font-body text-xs tracking-widest uppercase text-[#4d635f] dark:text-[#e7e2d9] opacity-70 hover:opacity-100 transition-opacity" href="#/login">Member Access</a>
+            </nav>
+        </div>
+    </footer>
+</div>

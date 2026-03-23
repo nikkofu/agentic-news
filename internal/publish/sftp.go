@@ -16,6 +16,8 @@ type SFTPConfig struct {
 
 type PublishResult struct {
 	Paths     RemotePaths
+	Status    string
+	Message   string
 	Published bool
 }
 
@@ -31,5 +33,10 @@ func PublishEdition(ctx context.Context, localDir string, date time.Time, cfg SF
 	}
 	_ = ctx
 	paths := BuildRemotePaths(cfg.RemoteDir, date)
-	return PublishResult{Paths: paths, Published: true}, nil
+	return PublishResult{
+		Paths:     paths,
+		Status:    "transport_deferred",
+		Message:   "SFTP transport is deferred in the current mainline iteration; remote paths were planned only.",
+		Published: false,
+	}, nil
 }

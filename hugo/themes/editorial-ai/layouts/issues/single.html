@@ -1,0 +1,83 @@
+{{ define "title" }}{{ .Title }} | agentic-news{{ end }}
+
+{{ define "assets" }}
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <script defer src="../assets/app.js"></script>
+{{ end }}
+
+{{ define "body_class" }}theme-shell theme-article{{ end }}
+
+{{ define "body_attrs" }} data-theme-id="editorial-ai"{{ end }}
+
+{{ define "main" }}
+{{ $articleID := printf "%v" (index .Params "article_id") }}
+{{ $featured := default (slice) (index .Site.Data.daily "Featured") }}
+{{ $pickScratch := newScratch }}
+{{ $pickScratch.Set "pick" (dict) }}
+{{ range $featured }}
+  {{ if eq (printf "%v" (index . "ID")) $articleID }}
+    {{ $pickScratch.Set "pick" . }}
+  {{ end }}
+{{ end }}
+{{ $pick := $pickScratch.Get "pick" }}
+{{ $insight := default (dict) (index $pick "Insight") }}
+{{ $editionDate := time.Format "2006-01-02" (time.AsTime (index .Site.Data.daily "Date")) }}
+{{ $cardType := lower (printf "%v" (default "standard" (index .Params "card_type"))) }}
+{{ $topicTags := default (slice) (index .Params "topic_tags") }}
+{{ $styleTags := default (slice) (index .Params "style_tags") }}
+{{ $cognitiveTags := default (slice) (index .Params "cognitive_tags") }}
+{{ $sourceName := default "来源待补充" (index .Params "source_name") }}
+{{ $sourceURL := default "#" (index .Params "source_url") }}
+{{ $category := default "未分类" (index .Params "category") }}
+{{ $summary := default "暂无摘要" (index .Params "summary") }}
+{{ $scoreFinal := default 0.0 (index .Params "score_final") }}
+{{ $whyForYou := default "这篇内容与你近期关注的主题和理解方式相关。" (default (index $insight "WhyForYou") (index .Params "why_for_you")) }}
+{{ $tasteGrowthHint := default "反馈后会在这里刷新口味拓展建议。" (default (index $insight "TasteGrowthHint") (index .Params "taste_growth_hint")) }}
+{{ $knowledgeGapHint := default "反馈后会在这里刷新知识补位建议。" (default (index $insight "KnowledgeGapHint") (index .Params "knowledge_gap_hint")) }}
+{{ $viewpoint := default "观点待补充" (index $insight "Viewpoint") }}
+<main class="container editorial-article editorial-ambient" data-page-kind="article" data-edition-date="{{ $editionDate }}" data-layout="editorial-article">
+  <a class="back-link" href="../index.html">← 返回</a>
+  <article class="article-shell"
+    data-feedback-surface="article"
+    data-article-id="{{ $articleID }}"
+    data-article-title="{{ .Title }}"
+    data-card-type="{{ $cardType }}"
+    data-source-name="{{ $sourceName }}"
+    data-source-url="{{ $sourceURL }}"
+    data-edition-date="{{ $editionDate }}"
+    data-topic-tags='{{ jsonify $topicTags }}'
+    data-style-tags='{{ jsonify $styleTags }}'
+    data-cognitive-tags='{{ jsonify $cognitiveTags }}'>
+    <div class="article-reading-column editorial-reading-glass" data-article-region="reading-column">
+      <p class="meta" data-reading-block="source">{{ $category }} · {{ $sourceName }} · {{ if .Date.IsZero }}时间待定{{ else }}{{ time.Format "2006-01-02 15:04 MST" .Date }}{{ end }}</p>
+      <h1 data-reading-block="title">{{ .Title }}</h1>
+      {{ if eq $cardType "brief" }}<p class="meta">简版</p>{{ end }}
+      {{ with index .Params "cover_image" }}
+        <img src="../{{ . }}" alt="cover" class="cover" data-reading-block="cover-image" />
+      {{ else }}
+        {{ with index $pick "CoverImage" }}
+          <img src="{{ . }}" alt="cover" class="cover" data-reading-block="cover-image" />
+        {{ end }}
+      {{ end }}
+      <p data-reading-block="summary">{{ $summary }}</p>
+      <p><strong>评分：</strong>{{ printf "%.1f" $scoreFinal }}</p>
+      {{ if eq $cardType "brief" }}
+        <p><strong>降级原因：</strong>{{ default "" (index .Params "fallback_reason") }}</p>
+      {{ else }}
+        <p><strong>AI点评：</strong>{{ $viewpoint }}</p>
+      {{ end }}
+      <p><a href="{{ $sourceURL }}" target="_blank" rel="noopener noreferrer">查看原文</a></p>
+    </div>
+
+    <aside class="article-side-notes" data-article-region="side-notes">
+      <section class="side-note editorial-glass-note" data-side-note="recommendation">
+        <h2>为什么推荐给你</h2>
+        <p>{{ $whyForYou }}</p>
+      </section>
+      {{ partial "feedback-hooks.html" . }}
+      {{ partial "profile-panel.html" (dict "TopicTags" $topicTags "StyleTags" $styleTags "CognitiveTags" $cognitiveTags) }}
+      {{ partial "learning-panel.html" (dict "TasteGrowthHint" $tasteGrowthHint "KnowledgeGapHint" $knowledgeGapHint) }}
+    </aside>
+  </article>
+</main>
+{{ end }}

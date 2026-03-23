@@ -1,0 +1,68 @@
+<div class="auth-page min-h-screen flex flex-col overflow-hidden relative w-full">
+    <!-- Background Layer: Scholarly Blue and Amber Gradient -->
+    <div class="fixed inset-0 z-0 bg-flow opacity-90"></div>
+    <div class="fixed inset-0 z-1 px-10 py-10 opacity-20 pointer-events-none">
+        <div class="w-full h-full border border-on-surface/10 rounded-xl"></div>
+    </div>
+    
+    <!-- Visual Embellishments -->
+    <div class="fixed bottom-[-10%] left-[-5%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[120px] pointer-events-none"></div>
+    <div class="fixed top-[-10%] right-[-5%] w-[30%] h-[30%] rounded-full bg-on-tertiary-container/5 blur-[100px] pointer-events-none"></div>
+
+    <div class="relative z-10 flex-grow flex items-center justify-center px-6 py-20">
+        <!-- Focus Shield (Login Container) -->
+        <div class="w-full max-w-md glass-blur bg-surface/80 rounded-xl shadow-[0_24px_60px_rgba(29,28,22,0.08)] p-10 md:p-12 border border-outline-variant/15">
+            
+            <div class="text-center mb-10">
+                <span class="font-headline italic text-2xl text-primary tracking-wide">The Curator</span>
+                <div class="h-px w-8 bg-primary/20 mx-auto mt-4"></div>
+            </div>
+
+            <header class="mb-10 text-center">
+                <h1 class="font-headline text-3xl text-primary leading-tight font-light mb-2">Identify Yourself.</h1>
+                <p class="text-secondary font-body text-sm tracking-wide opacity-80 uppercase">Accessing the Atrium</p>
+            </header>
+
+            <div class="space-y-8">
+                <!-- Magic Link Input -->
+                <div class="space-y-3">
+                    <label class="block font-label text-xs font-semibold text-primary uppercase tracking-widest pl-1" for="email">Scholarly Email</label>
+                    <div class="relative">
+                        <input class="w-full bg-surface-container-highest/50 border-none outline-none focus:ring-0 focus:border-primary border-b-2 border-transparent focus:border-b-primary rounded-lg py-4 px-4 text-primary font-body placeholder:text-secondary/40 transition-all duration-300" id="email" placeholder="scholar@antechamber.edu" type="email" />
+                    </div>
+                    <a href="#/home" class="w-full mt-4 py-4 px-6 rounded-lg bg-gradient-to-br from-primary to-primary-container text-on-primary font-label font-medium tracking-wide flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-95 duration-300">
+                        <span>Send Magic Link</span>
+                        <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- Divider -->
+                <div class="flex items-center gap-4 py-2">
+                    <div class="flex-grow h-[1px] bg-outline-variant/30"></div>
+                    <span class="text-secondary/50 font-label text-[10px] uppercase tracking-widest">Or verified via</span>
+                    <div class="flex-grow h-[1px] bg-outline-variant/30"></div>
+                </div>
+
+                <!-- One-Tap Options -->
+                <div class="grid grid-cols-2 gap-4">
+                    <a href="#/home" class="flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-surface-container-high hover:bg-surface-container-highest transition-colors duration-300 group border border-outline-variant/10">
+                       <img alt="Google" class="w-5 h-5 grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkFjvH2vy_32LCIa0mcZIE1eyPxt0dHN7Ha1mv1k5LZtuCzFaFukLoJXZDgMHaeke96VVVOKLUD6RpeviVoR9Ux25yQZtzAlnA8b04OpWvJeVDlmZrZ7FJVEj0OiDqZsMdGVEv52--9l0a_BwzOgjBde8OvMVfnMZaNJK6InHl3HRXBDFvuegKAl5Ny4c06Yuh6GldCUgoEOkXidoJJ8LqzQElIaoVVOdicABwhL034Ynj9iC8JrX5UQQavUG-gPGG_uHXnmegxa8"/>
+                        <span class="font-label text-sm text-on-surface-variant">Google</span>
+                    </a>
+                    <a href="#/home" class="flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-surface-container-high hover:bg-surface-container-highest transition-colors duration-300 group border border-outline-variant/10">
+                        <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="apple" style="font-variation-settings: 'FILL' 1;">apple</span>
+                        <span class="font-label text-sm text-on-surface-variant">Apple</span>
+                    </a>
+                </div>
+            </div>
+
+            <footer class="mt-12 pt-8 border-t border-outline-variant/15 text-center">
+                <p class="text-xs text-secondary italic font-headline opacity-60">"In the silence of the atrium, knowledge finds its home."</p>
+                <div class="mt-6 flex justify-center gap-6">
+                    <a class="text-[10px] uppercase tracking-tighter text-secondary hover:text-primary transition-colors" href="#/landing">The Threshold</a>
+                    <a class="text-[10px] uppercase tracking-tighter text-secondary hover:text-primary transition-colors" href="#">Privacy Codex</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>

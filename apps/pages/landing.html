@@ -1,0 +1,180 @@
+<div class="bg-surface font-body text-on-surface flex flex-col min-h-screen">
+    <header class="bg-[#fef9f0] dark:bg-[#03192e] flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto sticky top-0 z-[100] border-none">
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-[#03192e] dark:text-[#f2ede4] hover:bg-[#e7e2d9]/30 transition-colors p-2 rounded-full cursor-pointer">menu</span>
+            <h1 class="text-2xl font-headline italic text-[#03192e] dark:text-[#f2ede4] tracking-wide">The Curator</h1>
+        </div>
+        <nav class="hidden md:flex items-center gap-10">
+            <a class="text-[#03192e] dark:text-[#f2ede4] font-bold font-headline tracking-wide text-sm" href="#/landing">The Threshold</a>
+            <a class="text-[#4d635f] dark:text-[#e7e2d9] font-headline tracking-wide text-sm hover:text-[#03192e] transition-colors" href="#">Philosophy</a>
+            <a class="text-[#4d635f] dark:text-[#e7e2d9] font-headline tracking-wide text-sm hover:text-[#03192e] transition-colors" href="#/vault">The Vault</a>
+        </nav>
+        <div class="flex items-center gap-6">
+            <a href="#/login" class="hidden lg:block font-label uppercase tracking-widest text-[10px] text-secondary hover:text-primary transition-colors">Member Login</a>
+            <a href="#/login">
+                <div class="h-10 w-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant/20 hover:scale-105 transition-transform">
+                    <span class="material-symbols-outlined text-secondary text-2xl">person</span>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <div class="flex-grow">
+        <!-- Hero Section -->
+        <section class="hero-gradient min-h-[795px] flex flex-col items-center justify-center text-center px-6 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20 pointer-events-none">
+                <svg height="100%" viewbox="0 0 1000 1000" width="100%" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="200" cy="300" fill="#fef9f0" r="1"></circle>
+                    <circle cx="800" cy="200" fill="#fef9f0" r="1.5"></circle>
+                    <circle cx="500" cy="500" fill="#fef9f0" r="2"></circle>
+                    <circle cx="300" cy="700" fill="#fef9f0" r="1"></circle>
+                    <path d="M200 300 L500 500 L800 200 M500 500 L300 700" fill="none" opacity="0.3" stroke="#fef9f0" stroke-width="0.5"></path>
+                </svg>
+            </div>
+            
+            <div class="max-w-4xl z-10">
+                <span class="font-label uppercase tracking-[0.4em] text-on-primary-container text-xs mb-8 block">The Digital Sanctuary</span>
+                <h2 class="font-headline text-5xl md:text-7xl lg:text-8xl text-surface font-light leading-tight mb-12 text-balance">
+                    The cure for the <span class="italic">fragmented</span> mind.
+                </h2>
+                <p class="font-body text-lg md:text-xl text-surface-container-highest/80 max-w-2xl mx-auto mb-16 font-light leading-relaxed">
+                    A quiet space for deep thought. Reclaim your focus with an intelligence curated for reflection, not distraction.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="#/login" class="bg-gradient-to-br from-[#fef9f0] to-[#e7e2d9] text-[#03192e] px-10 py-5 rounded-xl font-medium tracking-wide shadow-2xl hover:scale-[1.02] transition-all duration-300">
+                        Request Access
+                    </a>
+                    <a href="#/home" class="glass-card text-surface px-10 py-5 rounded-xl font-light tracking-wide border border-surface/10 hover:bg-surface/5 transition-all">
+                        Explore the Atrium
+                    </a>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-10 animate-bounce">
+                <span class="material-symbols-outlined text-surface-container-highest/40" data-icon="keyboard_double_arrow_down">keyboard_double_arrow_down</span>
+            </div>
+        </section>
+
+        <!-- Feature Showcase -->
+        <section class="py-32 px-8 bg-surface">
+            <div class="max-w-screen-2xl mx-auto">
+                <div class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+                    <div class="max-w-xl">
+                        <h3 class="font-headline text-4xl text-primary font-light mb-6 italic">Intellectual Architecture</h3>
+                        <p class="text-secondary text-lg leading-relaxed">Designed for the modern scholar who seeks depth in an age of surface-level noise.</p>
+                    </div>
+                    <div class="h-[1px] flex-grow bg-outline-variant/20 mx-12 hidden lg:block"></div>
+                    <span class="font-label text-xs tracking-widest text-outline">EDITION 01 — 2026</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                    <!-- AI Butler Synthesis -->
+                    <div class="md:col-span-7 bg-surface-container rounded-xl p-12 flex flex-col justify-between min-h-[450px] relative overflow-hidden group">
+                        <div class="z-10">
+                            <span class="material-symbols-outlined text-primary mb-6 block text-4xl" data-icon="auto_awesome">auto_awesome</span>
+                            <h4 class="font-headline text-3xl text-primary mb-4">AI Butler Synthesis</h4>
+                            <p class="text-secondary max-w-md leading-relaxed">Not a chatbot, but a silent archivist. It connects your fragmented notes into a cohesive cognitive map while you sleep.</p>
+                        </div>
+                        <div class="mt-12 z-10">
+                            <button class="text-primary font-medium flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Study the mechanics <span class="material-symbols-outlined" data-icon="arrow_right_alt">arrow_right_alt</span>
+                            </button>
+                        </div>
+                        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-surface-container-highest rounded-full blur-3xl opacity-50"></div>
+                    </div>
+
+                    <!-- Focus Shield -->
+                    <div class="md:col-span-5 bg-primary text-surface rounded-xl p-12 flex flex-col justify-center text-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary to-primary-container opacity-50"></div>
+                        <div class="z-10 backdrop-blur-md bg-surface/5 border border-surface/10 rounded-xl p-8 py-12">
+                            <span class="material-symbols-outlined text-surface mb-4 text-5xl" data-icon="verified_user">verified_user</span>
+                            <h4 class="font-headline text-2xl mb-4">The Focus Shield</h4>
+                            <p class="font-light text-surface/70 text-sm leading-relaxed mb-8">A sanctuary within the app that blurs the world to heighten your clarity.</p>
+                            <div class="w-24 h-1 bg-surface-variant/30 mx-auto"></div>
+                        </div>
+                    </div>
+
+                    <!-- Attention Analytics -->
+                    <div class="md:col-span-5 bg-surface-container-low border border-outline-variant/10 rounded-xl p-12 flex flex-col justify-between">
+                        <div>
+                            <span class="material-symbols-outlined text-secondary mb-6 block text-4xl" data-icon="monitoring">monitoring</span>
+                            <h4 class="font-headline text-2xl text-primary mb-4">Attention Analytics</h4>
+                            <p class="text-secondary leading-relaxed">Quantify your cognitive flow. Understand when your mind is at its sharpest and protect those hours.</p>
+                        </div>
+                        <div class="mt-8">
+                            <div class="flex items-end gap-1 h-12">
+                                <div class="w-2 bg-secondary/20 h-4 rounded-full"></div>
+                                <div class="w-2 bg-secondary/40 h-8 rounded-full"></div>
+                                <div class="w-2 bg-primary h-12 rounded-full"></div>
+                                <div class="w-2 bg-secondary/60 h-6 rounded-full"></div>
+                                <div class="w-2 bg-secondary/30 h-10 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Philosophical Alignment -->
+                    <div class="md:col-span-7 bg-surface-container-highest rounded-xl p-12 flex flex-col md:flex-row items-center gap-12">
+                        <div class="flex-1">
+                            <h4 class="font-headline text-2xl text-primary mb-4 italic">"Focus is the ultimate luxury."</h4>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">Our design philosophy rejects the 'notification-first' economy. We prioritize your calm above our engagement metrics.</p>
+                        </div>
+                        <div class="w-48 h-48 rounded-full overflow-hidden border-8 border-surface shrink-0 hidden sm:block">
+                            <img alt="Focus visual" class="w-full h-full object-cover grayscale opacity-80" data-alt="Soft ethereal light in a library" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9p1zNNbuhytfxNiUCXO_siIcoxYI1Pp8BMRddjvjUBF8j4kI3dRvjNOxk2gRhMUTkIf66t3ggnMAZpjR2wtHkRALQIQu_blwlWSEiKu_K6dcaEECqBaJhomfNWJ5Hf_uhn1Ml8dCqGrHXZ1Wn4c06Ydl-ivv5lxeKGFXKhmxQYzJWzTEYkX86G8AXgScHA37bnO3v9YBNCVbh6c9AGxUwstn6CS0NPkWPYqEyhO3U16U282fW2Xver7uF3Bm1g8RlCdbGfszRu_U"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="py-32 bg-surface-container-low">
+            <div class="max-w-4xl mx-auto text-center px-6">
+                <span class="material-symbols-outlined text-primary-container/20 text-6xl mb-8" data-icon="format_quote">format_quote</span>
+                <blockquote class="font-headline text-3xl md:text-4xl text-primary font-light italic leading-snug mb-10">
+                    The curator does not just collect information; they define what is worthy of space in the mind.
+                </blockquote>
+                <cite class="font-label text-xs tracking-widest text-secondary not-italic uppercase">— The Scholarly Manifesto</cite>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="py-40 px-8 relative overflow-hidden bg-surface">
+            <div class="max-w-screen-xl mx-auto flex flex-col items-center text-center">
+                <h2 class="font-headline text-5xl md:text-6xl text-primary font-light mb-12">Enter the Atrium.</h2>
+                <p class="text-secondary text-lg max-w-xl mb-16 font-light">Join a private collective of minds dedicated to depth, presence, and intentional growth.</p>
+                <div class="group relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <a href="#/login" class="relative block bg-primary text-surface px-16 py-6 rounded-xl font-medium tracking-widest hover:bg-primary-container transition-all">
+                        REQUEST ACCESS
+                    </a>
+                </div>
+                <p class="mt-12 text-outline text-xs tracking-widest uppercase">Current waitlist: 4-6 Weeks</p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-[#fef9f0] dark:bg-[#03192e] w-full border-t border-[#c4c6cd]/15">
+        <div class="w-full max-w-7xl mx-auto py-20 px-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+            <div>
+                <h5 class="font-headline italic text-xl text-primary mb-4">The Curator</h5>
+                <p class="font-body text-xs tracking-widest uppercase text-[#4d635f] dark:text-[#e7e2d9] opacity-70">
+                    © 2026 The Curator. For the fragmented mind.
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap gap-12">
+                <div class="flex flex-col gap-4">
+                    <span class="font-label text-[10px] tracking-widest text-outline uppercase mb-2">Navigation</span>
+                    <a class="font-body text-xs tracking-widest uppercase text-[#4d635f] hover:text-primary underline decoration-[#03192e] transition-all" href="#/landing">The Threshold</a>
+                    <a class="font-body text-xs tracking-widest uppercase text-[#4d635f] opacity-70 hover:opacity-100 transition-opacity" href="#">Philosophy</a>
+                    <a class="font-body text-xs tracking-widest uppercase text-[#4d635f] opacity-70 hover:opacity-100 transition-opacity" href="#">The Library</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <span class="font-label text-[10px] tracking-widest text-outline uppercase mb-2">Legal</span>
+                    <a class="font-body text-xs tracking-widest uppercase text-[#4d635f] opacity-70 hover:opacity-100 transition-opacity" href="#">Privacy Codex</a>
+                    <a class="font-body text-xs tracking-widest uppercase text-[#4d635f] opacity-70 hover:opacity-100 transition-opacity" href="#">Scholarly Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

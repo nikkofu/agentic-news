@@ -1,0 +1,171 @@
+<div class="px-5 pt-8 pb-32 max-w-7xl mx-auto">
+    <!-- Header / Title -->
+    <div class="mb-10 text-center md:text-left flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+        <div>
+            <h1 class="text-4xl md:text-5xl font-headline italic text-primary leading-tight mb-4 flex items-center gap-3 justify-center md:justify-start">
+                 <span class="material-symbols-outlined text-4xl text-secondary">explore</span>
+                Cognitive Frontiers
+            </h1>
+            <p class="font-body text-on-surface-variant max-w-2xl mx-auto md:mx-0">
+                An analysis of your intellectual terrain. Discover uncharted territories based on your historical reading patterns.
+            </p>
+        </div>
+        
+        <div class="bg-surface-container-high rounded-full px-4 py-2 flex items-center gap-3 border border-outline-variant/20 shadow-sm mx-auto md:mx-0">
+             <span class="text-xs font-label uppercase tracking-widest text-on-surface-variant font-bold">Exploration Mode</span>
+             <div class="w-10 h-6 bg-primary rounded-full relative cursor-pointer flex-shrink-0">
+                 <div class="w-4 h-4 rounded-full bg-white absolute right-1 top-1 shadow-sm"></div>
+             </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <!-- Main Analysis Area (8 columns on large screens) -->
+        <div class="lg:col-span-8 flex flex-col gap-8">
+            
+            <!-- Cognitive Map / Spider Chart Representation -->
+            <section class="bg-surface-container-low rounded-3xl p-6 md:p-10 border border-surface-container-highest shadow-sm relative overflow-hidden">
+                <div class="flex justify-between items-start mb-8 relative z-10">
+                    <h2 class="text-xl font-headline font-bold text-primary">Your Knowledge Topography</h2>
+                    <span class="material-symbols-outlined text-secondary opacity-50 cursor-pointer hover:opacity-100 transition-opacity">info</span>
+                </div>
+
+                <!-- Abstract visualization of a radar map -->
+                <div class="relative w-full aspect-square max-w-md mx-auto mb-8 flex items-center justify-center">
+                    <!-- Concentric Circles -->
+                    <div class="absolute inset-0 rounded-full border border-surface-container-highest border-dashed opacity-40"></div>
+                    <div class="absolute inset-[15%] rounded-full border border-surface-container-highest opacity-50"></div>
+                    <div class="absolute inset-[30%] rounded-full border border-surface-container-highest border-dashed opacity-60"></div>
+                    <div class="absolute inset-[45%] rounded-full border border-surface-container-highest opacity-70"></div>
+                    <div class="absolute inset-[60%] rounded-full border border-secondary/20 bg-secondary/5"></div>
+                    
+                    <!-- Axes -->
+                    <div class="absolute w-full h-[1px] bg-surface-container-highest top-1/2 -translate-y-1/2"></div>
+                    <div class="absolute h-full w-[1px] bg-surface-container-highest left-1/2 -translate-x-1/2"></div>
+                    <div class="absolute w-full h-[1px] bg-surface-container-highest top-1/2 -translate-y-1/2 rotate-45"></div>
+                    <div class="absolute w-full h-[1px] bg-surface-container-highest top-1/2 -translate-y-1/2 -rotate-45"></div>
+
+                    <!-- Shape -->
+                    <svg class="absolute inset-0 w-full h-full text-primary" viewBox="0 0 100 100">
+                        <polygon points="50,15 80,30 85,60 65,85 40,75 25,50 35,25" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        <polygon points="50,50 65,35 68,55 58,68 45,62 38,50 42,38" fill="var(--secondary)" fill-opacity="0.1" stroke="var(--secondary)" stroke-width="1.5" stroke-dasharray="2,2"/>
+                    </svg>
+
+                    <!-- Labels -->
+                    <span class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 text-[9px] font-bold uppercase tracking-widest text-primary bg-surface px-2">Philosophy</span>
+                    <span class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2 text-[9px] font-bold uppercase tracking-widest text-primary bg-surface px-2">Economics</span>
+                    <span class="absolute right-0 top-1/2 translate-x-2 -translate-y-1/2 text-[9px] font-bold uppercase tracking-widest text-primary bg-surface px-2">Technology</span>
+                    <span class="absolute left-0 top-1/2 -translate-x-2 -translate-y-1/2 text-[9px] font-bold uppercase tracking-widest text-primary bg-surface px-2">Biology</span>
+                </div>
+
+                <!-- Legend -->
+                <div class="flex justify-center gap-6 text-xs font-body font-bold relative z-10">
+                     <span class="flex items-center gap-2 text-primary">
+                        <span class="w-3 h-3 border-2 border-primary rounded-full"></span> Current Baseline
+                    </span>
+                    <span class="flex items-center gap-2 text-secondary">
+                        <span class="w-3 h-3 border-2 border-secondary border-dashed rounded-full"></span> Expansion Target
+                    </span>
+                </div>
+            </section>
+
+             <!-- Identified Gaps & Curated Tasks -->
+             <section>
+                <h2 class="text-xl font-headline font-bold text-primary mb-6">Curated Expansion Paths</h2>
+
+                <div class="space-y-4">
+                     <!-- Gap 1 -->
+                    <div class="card-white rounded-3xl p-6 border border-outline-variant/10 shadow-sm flex flex-col md:flex-row gap-6 md:items-center hover:bg-surface-container transition-all cursor-pointer group">
+                        <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center flex-shrink-0 text-secondary border border-secondary/20 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                             <span class="material-symbols-outlined text-3xl">biotech</span>
+                        </div>
+                        <div class="flex-grow">
+                             <div class="flex items-center gap-2 mb-1">
+                                <h3 class="text-lg font-headline font-bold text-primary">The Ethics of CRISPR</h3>
+                                <span class="bg-primary/5 text-primary px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-widest border border-primary/10">High Value</span>
+                            </div>
+                            <p class="text-sm font-body text-on-surface-variant line-clamp-2">You read heavily on ancient Stoicism and modern Bio-tech separately. Connecting these domains strengthens moral frameworks for future therapies.</p>
+                        </div>
+                        <div class="flex-shrink-0 w-full md:w-auto mt-4 md:mt-0">
+                             <button class="w-full md:w-auto px-6 py-3 rounded-xl btn-primary font-bold text-sm shadow-md active:scale-95 transition-all outline-none">
+                                Begin Pathway
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Gap 2 -->
+                    <div class="card-white rounded-3xl p-6 border border-outline-variant/10 shadow-sm flex flex-col md:flex-row gap-6 md:items-center hover:bg-surface-container transition-all cursor-pointer group">
+                        <div class="w-16 h-16 rounded-2xl bg-surface-container-highest flex items-center justify-center flex-shrink-0 text-on-surface-variant border border-outline-variant/20 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                             <span class="material-symbols-outlined text-3xl">currency_exchange</span>
+                        </div>
+                        <div class="flex-grow">
+                             <div class="flex items-center gap-2 mb-1">
+                                <h3 class="text-lg font-headline font-bold text-primary">Post-Scarcity Models</h3>
+                            </div>
+                            <p class="text-sm font-body text-on-surface-variant line-clamp-2">Your focus on 'AI Automation' lacks grounding in theoretical economics. Understanding UBI and resource allocation is recommended.</p>
+                        </div>
+                        <div class="flex-shrink-0 w-full md:w-auto mt-4 md:mt-0">
+                             <button class="w-full md:w-auto px-6 py-3 rounded-xl btn-outline font-bold text-sm active:scale-95 transition-all">
+                                Begin Pathway
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar (4 columns on large screens) -->
+        <div class="lg:col-span-4 flex flex-col gap-6 w-full">
+            
+            <!-- Butler's Suggestion: Native Widget Style -->
+            <div class="card p-6 border border-outline-variant/10 shadow-sm bg-surface-bright">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                        <span class="material-symbols-outlined text-xl fill">psychology</span>
+                    </div>
+                    <div>
+                        <h3 class="font-headline font-bold text-primary">Butler's Insight</h3>
+                    </div>
+                </div>
+                <p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6 italic border-l-2 border-secondary/30 pl-3">
+                    Your reading velocity has increased, but source diversity has dropped by <span class="font-bold text-error">15%</span> this month. Beware the echo chamber effect.
+                </p>
+                <button class="w-full py-2.5 rounded-lg border border-primary/20 text-primary font-bold text-sm hover:bg-primary/5 transition-colors">
+                    Diversify My Feed
+                </button>
+            </div>
+
+            <!-- Reading Material Pipeline -->
+            <div class="bg-surface-container-low rounded-3xl p-6 border border-surface-container-highest">
+                 <h3 class="font-headline text-lg font-bold text-primary mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary">inbox</span>
+                    Recommended Foundations
+                </h3>
+                
+                <div class="space-y-5">
+                    <!-- Book Item -->
+                    <div class="flex gap-4 group cursor-pointer">
+                        <div class="w-12 h-16 bg-surface-container-highest rounded-md shadow-sm border border-outline-variant/20 overflow-hidden flex-shrink-0 group-hover:scale-105 transition-transform">
+                             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz4u3m_Xzz_jN5d0D9k14vNtz5qM_f-7_u88mX7zK_N8V2Xl7Yw2u2T5U2_Wz5L7rY9Vv4s-jL_13qH1sC3D85_fXwI1rY7g_-G7N6R-K_E_rY0s-Z" class="w-full h-full object-cover opacity-80 mix-blend-multiply" alt="Book Cover" />
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <h4 class="font-headline font-bold text-primary leading-tight group-hover:text-secondary transition-colors">The Structure of Scientific Revolutions</h4>
+                            <p class="text-[11px] font-body text-on-surface-variant uppercase tracking-wide mt-1">Thomas S. Kuhn</p>
+                        </div>
+                    </div>
+
+                    <!-- Book Item -->
+                    <div class="flex gap-4 group cursor-pointer">
+                        <div class="w-12 h-16 bg-primary/10 rounded-md shadow-sm border border-primary/20 overflow-hidden flex-shrink-0 flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+                             <span class="material-symbols-outlined">menu_book</span>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <h4 class="font-headline font-bold text-primary leading-tight group-hover:text-secondary transition-colors">Thinking, Fast and Slow</h4>
+                            <p class="text-[11px] font-body text-on-surface-variant uppercase tracking-wide mt-1">Daniel Kahneman</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

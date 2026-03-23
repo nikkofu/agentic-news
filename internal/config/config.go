@@ -41,6 +41,9 @@ func LoadConfig(dir string) (Config, error) {
 	}); err != nil {
 		return Config{}, err
 	}
+	if err := expandOPMLSources(dir, &cfg.RSS); err != nil {
+		return Config{}, err
+	}
 
 	if err := cfg.validate(); err != nil {
 		return Config{}, err

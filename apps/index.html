@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Curator | Digital Sanctuary</title>
+    <!-- Use Tailwind CDN as base to retain complex layout utilities from design exactly as requested -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#e7e2d9",
+                        "secondary-container": "#cfe8e3",
+                        "on-surface": "#1d1c16",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#1a2e44",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#f2ede4",
+                        "surface-container-high": "#ece8df",
+                        "surface-container-low": "#f8f3ea",
+                        "surface-bright": "#fef9f0",
+                        "error": "#ba1a1a",
+                        "background": "#fef9f0",
+                        "secondary": "#4d635f",
+                        "primary": "#03192e",
+                        "surface": "#fef9f0",
+                        "outline-variant": "#c4c6cd",
+                        "surface-container-highest": "#e7e2d9",
+                        "on-surface-variant": "#43474d"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="css/sanctuary.css" rel="stylesheet" />
+    <style>
+        /* Fade transition for main content */
+        #app-main {
+            transition: opacity 0.15s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container min-h-screen">
+
+    <!-- Global App Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="header-brand">
+                <span class="material-symbols-outlined text-primary">menu_book</span>
+                <span class="header-title">The Curator</span>
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <!-- Desktop Nav -->
+                <nav class="desktop-nav">
+                    <a href="#/home" class="desktop-nav-link active">Briefing</a>
+                    <a href="#/category" class="desktop-nav-link">Domains</a>
+                    <a href="#/learning" class="desktop-nav-link">Learning</a>
+                    <a href="#/reflection" class="desktop-nav-link">Sanctuary</a>
+                </nav>
+                
+                <!-- Utilities -->
+                <div class="flex items-center gap-4">
+                    <a href="#/rss-source" class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors hidden md:flex">
+                        <span class="material-symbols-outlined">rss_feed</span>
+                    </a>
+                    <button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                    <a href="#/profile" class="w-9 h-9 rounded-full ring-2 ring-primary/10 overflow-hidden cursor-pointer active:scale-95 transition-transform block">
+                        <img alt="Scholar Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPDqtRI_zeabhYn2j9iFCtY_fI4CyjKWG4vfBZCF6SQ3BRhOIemGRlUUW-KwoYF-bchz_DIY-H70kERK-fhNmFH4x4YrFKc0t5x3aj39mqXExRQv318UyCCOJdlkO0WLSCVxxmPmVphqhVMuzqAXJOW4LUJq3rZ9XT1ZnJ3eLawfwRd8tqZsmalzqACAYCS2Tl-Ya68MsFrepgR0VAbWKvbPYRyQN7yx7h5mLcqlJgrMj76p7uG7xrnaeiibmppwcqJpYvFzQgAW8" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="bg-surface-container h-[1px] w-full"></div>
+    </header>
+
+    <!-- Dynamic Main Content Area -->
+    <main id="app-main" class="w-full relative min-h-[70vh]">
+        <!-- Views will be injected here -->
+        <div class="flex items-center justify-center p-20 opacity-50">
+             <span class="material-symbols-outlined animate-spin text-4xl text-primary">sync</span>
+        </div>
+    </main>
+
+    <!-- Global Mobile Bottom Nav -->
+    <nav class="bottom-nav">
+        <a href="#/home" class="nav-item active">
+            <div class="nav-icon-container"><span class="material-symbols-outlined text-2xl">auto_stories</span></div>
+            <span class="nav-label">Briefing</span>
+        </a>
+        <a href="#/category" class="nav-item">
+            <div class="nav-icon-container"><span class="material-symbols-outlined text-2xl">account_tree</span></div>
+            <span class="nav-label">Domains</span>
+        </a>
+        <a href="#/learning" class="nav-item">
+            <div class="nav-icon-container"><span class="material-symbols-outlined text-2xl">psychology</span></div>
+            <span class="nav-label">Learning</span>
+        </a>
+        <a href="#/reflection" class="nav-item">
+            <div class="nav-icon-container"><span class="material-symbols-outlined text-2xl">spa</span></div>
+            <span class="nav-label">Sanctuary</span>
+        </a>
+    </nav>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

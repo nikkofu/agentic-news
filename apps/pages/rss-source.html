@@ -1,0 +1,143 @@
+<div class="px-5 pt-8 pb-32 max-w-7xl mx-auto">
+    <!-- Header / Title -->
+    <div class="mb-10 text-center md:text-left flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+        <div>
+            <h1 class="text-4xl md:text-5xl font-headline italic text-primary leading-tight mb-4 flex items-center gap-3 justify-center md:justify-start">
+                 <span class="material-symbols-outlined text-4xl text-secondary">rss_feed</span>
+                Knowledge Streams
+            </h1>
+            <p class="font-body text-on-surface-variant max-w-2xl mx-auto md:mx-0">
+                Connect your intellectual intake. Manage the flow of information into the sanctuary for Butler synthesis.
+            </p>
+        </div>
+        
+        <button class="w-full md:w-auto px-6 py-3 btn-primary rounded-xl font-bold text-sm shadow-md active:scale-95 transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined">add</span>
+            Connect New Stream
+        </button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <!-- Main Streams List (8 columns) -->
+        <div class="lg:col-span-8 flex flex-col gap-8">
+            
+            <!-- Quick Connect Input -->
+            <div class="bg-surface-container-low p-6 rounded-3xl border border-surface-container-highest shadow-sm">
+                 <h3 class="text-xs font-label uppercase tracking-widest text-secondary font-bold mb-4">Fast Connect</h3>
+                 <div class="flex flex-col sm:flex-row gap-3">
+                     <div class="relative flex-grow">
+                        <input type="text" placeholder="Paste RSS, Newsletter URL or ArXiv ID" 
+                               class="w-full bg-surface-bright rounded-xl py-4 px-12 text-sm font-body border border-outline-variant/10 focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40">link</span>
+                     </div>
+                     <button class="px-8 py-4 btn-secondary rounded-xl font-bold text-sm">Analyze</button>
+                 </div>
+            </div>
+
+            <!-- Active Sources List -->
+            <section>
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-headline font-bold text-primary">Active Sources</h2>
+                    <div class="flex gap-2">
+                        <button class="p-2 bg-surface-container-highest rounded-lg text-on-surface-variant"><span class="material-symbols-outlined text-sm">filter_list</span></button>
+                        <button class="p-2 bg-surface-container-highest rounded-lg text-on-surface-variant"><span class="material-symbols-outlined text-sm">grid_view</span></button>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <!-- Source 1 -->
+                    <div class="card-white p-5 rounded-2xl border border-outline-variant/10 shadow-sm flex items-center gap-4 hover:bg-surface-container transition-all cursor-pointer group">
+                        <div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                             <span class="material-symbols-outlined text-2xl">menu_book</span>
+                        </div>
+                        <div class="flex-grow">
+                             <div class="flex justify-between items-center">
+                                <h3 class="font-headline font-bold text-primary">Marginal Revolution</h3>
+                                <span class="text-[9px] font-bold text-tertiary uppercase tracking-widest bg-tertiary/10 px-2 py-0.5 rounded">Healthy flow</span>
+                             </div>
+                             <p class="text-[11px] font-body text-on-surface-variant">https://marginalrevolution.com/rss • Synthesis: High Density</p>
+                        </div>
+                        <div class="flex-shrink-0 flex items-center gap-4">
+                             <div class="text-right hidden sm:block">
+                                <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Last Update</p>
+                                <p class="text-xs font-body font-bold text-primary">2h ago</p>
+                             </div>
+                             <button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors"><span class="material-symbols-outlined text-on-surface-variant">more_vert</span></button>
+                        </div>
+                    </div>
+
+                    <!-- Source 2 -->
+                    <div class="card-white p-5 rounded-2xl border border-outline-variant/10 shadow-sm flex items-center gap-4 hover:bg-surface-container transition-all cursor-pointer group">
+                        <div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                             <span class="material-symbols-outlined text-2xl">science</span>
+                        </div>
+                        <div class="flex-grow">
+                             <div class="flex justify-between items-center">
+                                <h3 class="font-headline font-bold text-primary">Nature: Biotechnology</h3>
+                                <span class="text-[9px] font-bold text-secondary uppercase tracking-widest bg-secondary/10 px-2 py-0.5 rounded">Low flow</span>
+                             </div>
+                             <p class="text-[11px] font-body text-on-surface-variant">Nature RSS Feed • Synthesis: Balanced</p>
+                        </div>
+                        <div class="flex-shrink-0 flex items-center gap-4">
+                             <div class="text-right hidden sm:block">
+                                <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Last Update</p>
+                                <p class="text-xs font-body font-bold text-primary">1d ago</p>
+                             </div>
+                             <button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors"><span class="material-symbols-outlined text-on-surface-variant">more_vert</span></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar (4 columns) -->
+        <div class="lg:col-span-4 flex flex-col gap-6 w-full">
+            
+            <!-- Quality Audit Widget -->
+            <div class="bg-primary-container text-on-primary-container rounded-3xl p-6 relative overflow-hidden shadow-xl shadow-primary/20">
+                 <div class="absolute -right-6 -bottom-6 opacity-10 pointer-events-none">
+                    <span class="material-symbols-outlined text-9xl">analytics</span>
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-2 mb-4">
+                         <span class="material-symbols-outlined text-tertiary-fixed">verified</span>
+                         <span class="text-[10px] font-extrabold uppercase tracking-[0.2em] opacity-60">Source Quality Audit</span>
+                    </div>
+                    <div class="flex items-end gap-2 mb-6">
+                         <p class="text-5xl font-headline font-bold text-white leading-none">A+</p>
+                         <p class="text-xs font-body mb-1 opacity-80">Excellent Diversification</p>
+                    </div>
+                    <p class="text-[13px] font-body leading-relaxed mb-6 opacity-90">
+                        Your intake profile is currently balanced between 'Immediate Frontier' and 'Long-term Foundations'.
+                    </p>
+                    <button class="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 py-3 rounded-xl font-bold font-body text-sm transition-all flex items-center justify-center gap-2">
+                         Full Report
+                    </button>
+                </div>
+            </div>
+
+            <!-- Intake Influence Map (Mini visual) -->
+            <div class="bg-surface-container-low rounded-3xl p-6 border border-surface-container-highest">
+                 <h3 class="font-headline text-lg font-bold text-primary mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary">hub</span>
+                    Influence Map
+                </h3>
+                
+                <div class="aspect-square bg-surface-bright rounded-2xl border border-outline-variant/10 relative p-4 mb-4">
+                    <!-- Abstract representation of connections -->
+                    <div class="absolute top-1/4 left-1/3 w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(3,25,46,0.5)]"></div>
+                    <div class="absolute top-1/2 left-2/3 w-3 h-3 rounded-full bg-secondary"></div>
+                    <div class="absolute bottom-1/4 left-1/4 w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+                    <svg class="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 100 100">
+                         <path d="M35,25 L65,50 M65,50 L25,75 M35,25 L25,75" stroke="var(--primary)" stroke-width="0.5" fill="none" />
+                    </svg>
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <span class="text-[8px] font-bold text-on-surface-variant/40 uppercase tracking-tighter">Topic Dominance</span>
+                    </div>
+                </div>
+                
+                <p class="text-[11px] font-body text-on-surface-variant text-center opacity-60">Based on your 24 active streams.</p>
+            </div>
+        </div>
+    </div>
+</div>

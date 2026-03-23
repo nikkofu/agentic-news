@@ -1,110 +1,83 @@
 # agentic-news
 
-An AI news butler for personal cognitive growth. It transforms high-density RSS streams into high-quality daily mobile briefings with deep analysis, personalized ranking, and actionable learning guidance.
+Task 8 adds and verifies the built-in render theme matrix plus the local stylesheet build step needed to preview those themes consistently.
 
-## Overview
+## Supported Themes
 
-`agentic-news` is a single-user, highly personalized daily news pipeline:
+Built-in theme IDs:
 
-- Ingest RSS from tech, public affairs, finance, and expert opinion sources
-- Clean, deduplicate, and normalize content
-- Run staged AI analysis (facts → deep insight → personal guidance)
-- Rank and select 10–20 featured items every day
-- Render a clean mobile H5 edition
-- Publish to Nginx via SFTP with dated archives and `/latest` entry
+- `editorial-ai`
+- `ai-product-magazine`
+- `youth-signal`
+- `soft-focus`
 
-Goal: not just aggregation, but continuous improvement in taste, cognition, and knowledge structure.
+## Local Style Build
 
-## Core Features (MVP)
-
-- Daily automated morning edition (before 07:00)
-- Chinese + English input, Chinese-first output
-- Deep commentary with evidence-linked insights
-- Source-tier confidence thresholds
-- Strong personalization with dual-track learning:
-  - Explicit feedback (like/neutral/disagree)
-  - Implicit behavior (click/dwell/revisit/bookmark)
-- Static H5 output with required fields:
-  - Category
-  - Summary
-  - Score
-  - Cover image
-  - Detail page
-  - Source + original link
-  - Publish time
-
-## Architecture (MVP)
-
-- **Local Builder (Go)**: ingest → analyze → rank → render → verify → publish
-- **Cloud Nginx**: static hosting only
-
-## Output Structure
-
-```text
-/YYYY/MM/DD/index.html
-/YYYY/MM/DD/articles/{id}.html
-/YYYY/MM/DD/assets/...
-/YYYY/MM/DD/data/daily.json
-/YYYY/MM/DD/data/learning.json
-/YYYY/MM/DD/attachments/...
-/YYYY/MM/DD/meta.json
-/latest/...
-```
-
-## Repository Status
-
-🚧 In active build-out from approved spec and implementation plan.
-
-- Spec: `docs/superpowers/specs/2026-03-19-agentic-news-butler-design.md`
-- Plan: `docs/superpowers/plans/2026-03-19-agentic-news-mvp-implementation.md`
-
-## Planned Project Layout
-
-```text
-cmd/daily-builder/
-internal/config/
-internal/rss/
-internal/content/
-internal/analyze/
-internal/rank/
-internal/profile/
-internal/render/
-internal/output/
-internal/publish/
-internal/verify/
-internal/run/
-web/templates/
-web/static/
-prompts/
-config/
-state/
-output/
-docs/
-scripts/
-tests/
-```
-
-## Quick Start (planned)
+Install frontend dependencies once:
 
 ```bash
-# configure yaml files in config/
-# set env vars for SFTP credentials
-
-go run ./cmd/daily-builder run --date today --mode morning
+npm install
 ```
 
-## Roadmap
+Rebuild the local stylesheet bundle after editing `web/tailwind/input.css` or any theme-specific template classes:
 
-- [x] Product design spec
-- [x] Implementation plan
-- [ ] Go bootstrap
-- [ ] RSS ingest + dedupe
-- [ ] AI analysis pipeline
-- [ ] Ranking + personalization
-- [ ] H5 rendering + artifact output
-- [ ] SFTP publish + latest switch
-- [ ] Verification gate + scheduler scripts
+```bash
+npm run build:styles
+```
 
-## License
+The renderer copies `web/static/styles.css` into each dated edition’s `assets/` directory, so stale local CSS will propagate into generated theme outputs.
 
-Apache-2.0 — see [LICENSE](./LICENSE).
+## Theme Run Examples
+
+Generate a sample edition with the `editorial-ai` theme:
+
+```bash
+go run ./cmd/daily-builder sample 2026-03-20 --theme editorial-ai
+```
+
+Generate a sample edition with the `ai-product-magazine` theme:
+
+```bash
+go run ./cmd/daily-builder sample 2026-03-19 --theme ai-product-magazine
+```
+
+Other supported theme IDs can be passed the same way:
+
+```bash
+go run ./cmd/daily-builder sample 2026-03-19 --theme youth-signal
+go run ./cmd/daily-builder sample 2026-03-19 --theme soft-focus
+```
+
+## Hugo Render Bridge
+
+The Go pipeline now writes a theme-neutral edition package alongside the themed output. For a run dated `2026-03-20`, the package lives under:
+
+```text
+output/_packages/2026/03/20
+```
+
+The `sample` command prints both the themed output root and the package root:
+
+```bash
+go run ./cmd/daily-builder sample 2026-03-20 --theme editorial-ai
+```
+
+If you want to render that package through Hugo, run:
+
+```bash
+go run ./cmd/daily-builder render-hugo --date 2026-03-20 --theme editorial-ai
+```
+
+`hugo` is an optional local prerequisite for the second step only. The Go renderer and package writer still work without the Hugo binary installed.
+
+## Image Archival
+
+When a rendered pick includes `CoverImageLocal`, the renderer prefers that archived local path instead of the original remote image URL.
+
+That is why original image assets appear under:
+
+```text
+/THEME/YYYY/MM/DD/assets/images/...
+```
+
+This keeps each dated edition self-contained, preserves historical rendering, and avoids later breakage if the upstream image host changes or disappears.

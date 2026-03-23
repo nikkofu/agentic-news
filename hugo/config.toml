@@ -1,0 +1,4 @@
+baseURL = "http://localhost/"
+languageCode = "zh-CN"
+title = "agentic-news"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]

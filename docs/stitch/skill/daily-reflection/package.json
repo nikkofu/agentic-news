@@ -1,0 +1,22 @@
+{
+  "name": "@agentic-news/daily-reflection",
+  "version": "1.0.0",
+  "description": "An OpenClaw AgentSkill to actively monitor daily local activities, reflect on learnings, and generate high-quality philosophical and technical reports for the user.",
+  "keywords": [
+    "openclaw-skill",
+    "reflection",
+    "daily-report",
+    "agentic-workflow",
+    "self-improving"
+  ],
+  "author": "Digital Sanctuary Architecture",
+  "license": "MIT",
+  "engines": {
+    "openclaw": ">=1.0.0"
+  },
+  "clawhub": {
+    "skillType": "background-monitor",
+    "capabilities": ["local-file-access", "command-execution"],
+    "entrypoint": "SKILL.md"
+  }
+}

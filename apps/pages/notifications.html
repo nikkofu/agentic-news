@@ -1,0 +1,119 @@
+<!-- Background Canvas (The Sanctuary) -->
+<div class="relative w-full h-full min-h-[70vh] flex items-center justify-center p-8 lg:p-20">
+    <div class="absolute inset-0 z-0">
+        <img class="w-full h-full object-cover opacity-10 filter sepia-[0.3]" data-alt="Quiet sun-drenched grand library interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrWd2BsfT_kreGJHTBPQ6BqEF1fYLRll_PQ9hqf1KR8Z70vdsbLC6WXZwnmRHeozRymvyaciPkpZYCvEJuB6e28HKbT6FEHwpaMEvXGZXfHPAjvH2NxxTHTcFsqk3UmoSk8hzXIJ5v3rCDwB4a2DjaNZleoev_XKCm84DtJ5Zd6gK3pMOhZIKLYzjarTpvvBfSX8M-L4Dqhax0v14zDvv27_-4ZKO_NK-EpFSb6Dd6rxbKnyE7DAZVmAncsvdFRtq6jeVmhN1TjlI"/>
+    </div>
+    <div class="z-10 text-center max-w-2xl hidden md:block">
+        <h2 class="font-headline text-5xl md:text-7xl text-primary mb-6">Enter the Atrium</h2>
+        <p class="text-on-surface-variant text-lg leading-relaxed font-light">
+            A space for quiet reflection and cognitive expansion. Your digital legacy is curated with intention.
+        </p>
+    </div>
+</div>
+
+<!-- Oracle Side Drawer (Notification Drawer) -->
+<div class="fixed inset-0 z-[60] flex justify-end pointer-events-none">
+    <!-- Backdrop Overlay -->
+    <div class="absolute inset-0 bg-primary/20 backdrop-blur-sm pointer-events-auto" onclick="window.history.back()"></div>
+    
+    <!-- Drawer Content -->
+    <aside class="relative w-full max-w-md h-full bg-surface-bright/95 backdrop-blur-xl shadow-2xl flex flex-col border-l border-primary/10 pointer-events-auto animate-[slideIn_0.3s_ease-out]">
+        <!-- Header Section -->
+        <header class="px-8 pt-12 pb-8 flex flex-col gap-6">
+            <div class="flex justify-between items-center">
+                <button class="text-primary/60 hover:text-primary transition-colors active:scale-90" onclick="window.history.back()">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+                <button class="text-[10px] font-bold uppercase tracking-widest text-[#b08d1a] border border-[#b08d1a]/30 px-3 py-1.5 rounded-full hover:bg-[#b08d1a]/10 transition-all active:scale-95">
+                    Mark all read
+                </button>
+            </div>
+            <div>
+                <h1 class="font-headline text-3xl italic text-primary">The Oracle Synthesis</h1>
+                <p class="text-primary/40 text-xs mt-2 font-bold tracking-widest uppercase">Last synchronized: Just now</p>
+            </div>
+        </header>
+
+        <!-- Notification List -->
+        <div class="flex-1 overflow-y-auto px-6 pb-24 space-y-4 custom-scrollbar">
+            <!-- System Broadcast (Unread) -->
+            <div class="group relative bg-[#f8f3ea] border border-primary/10 hover:border-primary/20 transition-all rounded-2xl p-6 border-l-4 border-l-[#d4af37] shadow-sm">
+                <div class="flex gap-4">
+                    <div class="h-10 w-10 shrink-0 bg-primary/5 rounded-xl flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-xl">campaign</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-bold text-[#b08d1a] uppercase tracking-widest">System Broadcast</span>
+                            <span class="text-[10px] font-bold text-primary/40 tracking-wider">12m ago</span>
+                        </div>
+                        <h3 class="text-primary font-headline text-lg mb-2">Sanctuary Firmware Upgrade 4.0</h3>
+                        <p class="text-on-surface-variant text-[13px] leading-relaxed">
+                            New archival nodes have been established. Your library indexing speed has improved by 40%.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Butler Prompt (Unread) -->
+            <div class="group relative bg-[#f8f3ea] border border-primary/10 hover:border-primary/20 transition-all rounded-2xl p-6 border-l-4 border-l-[#d4af37] shadow-sm">
+                <div class="flex gap-4">
+                    <div class="h-10 w-10 shrink-0 bg-secondary-container/50 rounded-xl flex items-center justify-center border border-secondary/10">
+                        <span class="material-symbols-outlined text-secondary text-xl">psychology</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Butler Intel</span>
+                            <span class="text-[10px] font-bold text-primary/40 tracking-wider">1h ago</span>
+                        </div>
+                        <h3 class="text-primary font-headline text-lg mb-2">Cognitive Pattern Detected</h3>
+                        <p class="text-on-surface-variant text-[13px] leading-relaxed mb-4">
+                            I've noticed a focus on 19th-century philosophy. Shall I synthesize a reading list for your next session?
+                        </p>
+                        <div class="flex gap-3">
+                            <button class="px-5 py-2.5 bg-secondary text-white rounded-lg text-xs font-bold transition-colors hover:bg-secondary/90 shadow-sm active:scale-95">
+                                Synthesize
+                            </button>
+                            <button class="px-5 py-2.5 bg-surface text-primary border border-outline-variant/30 rounded-lg text-xs font-bold transition-colors hover:bg-surface-container active:scale-95">
+                                Dismiss
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Peer Interaction (Read) -->
+            <div class="group relative bg-transparent border border-outline-variant/20 hover:bg-black/5 transition-all rounded-2xl p-6">
+                <div class="flex gap-4">
+                    <div class="h-10 w-10 shrink-0 bg-primary/5 rounded-full overflow-hidden border border-primary/10">
+                        <img class="w-full h-full object-cover" data-alt="Profile photo of a scholar peer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXAADkEmPZVFt7ygS9hnIkp2GHM637Fs6y-IlbdFcXJwQwR132ne9UwlXsAOnBmvLeVbancLyNqmTJ-hQ805w_FeHRRD21U5LcBpS2PNK_k-p9L__Itgc1CCKtuUlvz8QpVCBIPv_XJF9fuvL_mSfc88qbDX6WL8FB0e5Z8jW_daQ-cTiWKPpfnIIMjIAppbsj_lEiHyvihuAmuUzZa1yFJJ9hAKIZ9PgWeh5N06LgQIyaRrNR5ix0PPE9zFpbLn1aYZaiYQT007I"/>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-bold text-primary/50 uppercase tracking-widest">Peer Interaction</span>
+                            <span class="text-[10px] font-bold text-primary/40 tracking-wider">3h ago</span>
+                        </div>
+                        <h3 class="text-primary font-headline text-[15px] mb-2 font-medium">Curator Julian replied in the Agora</h3>
+                        <p class="text-on-surface-variant text-[13px] italic border-l-2 border-primary/20 pl-3 leading-relaxed opacity-90">
+                            "This interpretation of the Socratic method aligns perfectly with our recent findings in the Treasury."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Action Area -->
+        <footer class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-surface-bright via-surface-bright/90 to-transparent">
+            <button class="w-full py-4 bg-primary text-white font-headline italic rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all" onclick="window.location.hash='#/briefing'">
+                Return to Reading
+            </button>
+        </footer>
+    </aside>
+</div>
+
+<style>
+    @keyframes slideIn {
+        from { transform: translateX(100%); }
+        to { transform: translateX(0); }
+    }
+</style>

@@ -1,0 +1,12 @@
+{{ define "title" }}{{ time.Format "2006-01-02" (time.AsTime (index .Site.Data.daily "Date")) }} | agentic-news{{ end }}
+
+{{ define "assets" }}
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <script defer src="./assets/app.js"></script>
+{{ end }}
+
+{{ define "body_class" }}theme-shell theme-home{{ end }}
+
+{{ define "body_attrs" }} data-page-kind="index" data-edition-date="{{ time.Format "2006-01-02" (time.AsTime (index .Site.Data.daily "Date")) }}" data-theme-id="editorial-ai"{{ end }}
+
+{{ define "main" }}{{ partial "homepage-main.html" . }}{{ end }}

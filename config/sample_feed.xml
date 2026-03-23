@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Local Sample Source</title>
+    <item>
+      <title>Model deployment costs begin to normalize</title>
+      <link>sample_articles/article-1.html</link>
+      <pubDate>Wed, 19 Mar 2026 08:00:00 UTC</pubDate>
+      <description>Cloud inference pricing shows early signs of normalization as utilization improves.</description>
+    </item>
+    <item>
+      <title>Policy teams accelerate sovereign AI guidance</title>
+      <link>sample_articles/article-2.html</link>
+      <pubDate>Wed, 19 Mar 2026 08:10:00 UTC</pubDate>
+      <description>Regulators are shifting from abstract principles toward concrete deployment guidance.</description>
+    </item>
+    <item>
+      <title>Chip supply chain plans broaden beyond one region</title>
+      <link>sample_articles/article-3.html</link>
+      <pubDate>Wed, 19 Mar 2026 08:20:00 UTC</pubDate>
+      <description>Manufacturing plans increasingly emphasize resilience and multi-region redundancy.</description>
+    </item>
+    <item>
+      <title>Developer tooling sentiment remains mixed</title>
+      <link>sample_articles/missing-4.html</link>
+      <pubDate>Wed, 19 Mar 2026 08:30:00 UTC</pubDate>
+      <description>Teams remain optimistic about productivity gains but cautious about migration costs.</description>
+    </item>
+    <item>
+      <title>Capital markets continue to reward infrastructure narratives</title>
+      <link>sample_articles/missing-5.html</link>
+      <pubDate>Wed, 19 Mar 2026 08:40:00 UTC</pubDate>
+      <description>Equity flows still favor infrastructure stories tied to sustained AI demand.</description>
+    </item>
+    <item>
+      <title>Founders report longer enterprise procurement cycles</title>
+      <link>sample_articles/missing-6.html</link>
+      <pubDate>Wed, 19 Mar 2026 08:50:00 UTC</pubDate>
+      <description>Procurement friction remains a practical constraint even when pilot demand is strong.</description>
+    </item>
+    <item>
+      <title>Security reviews become a larger share of AI rollout time</title>
+      <link>sample_articles/missing-7.html</link>
+      <pubDate>Wed, 19 Mar 2026 09:00:00 UTC</pubDate>
+      <description>Security and governance checkpoints increasingly determine rollout timing.</description>
+    </item>
+    <item>
+      <title>Regional compute shortages push teams to hybrid deployment</title>
+      <link>sample_articles/missing-8.html</link>
+      <pubDate>Wed, 19 Mar 2026 09:10:00 UTC</pubDate>
+      <description>Capacity constraints are leading more teams to mix hosted and self-managed inference.</description>
+    </item>
+    <item>
+      <title>Open model benchmarks improve but evaluation skepticism grows</title>
+      <link>sample_articles/missing-9.html</link>
+      <pubDate>Wed, 19 Mar 2026 09:20:00 UTC</pubDate>
+      <description>Benchmark wins continue, yet practitioners increasingly question transfer to production value.</description>
+    </item>
+    <item>
+      <title>Talent markets favor operators who can bridge model and product teams</title>
+      <link>sample_articles/missing-10.html</link>
+      <pubDate>Wed, 19 Mar 2026 09:30:00 UTC</pubDate>
+      <description>Cross-functional execution remains one of the most persistent bottlenecks in deployment.</description>
+    </item>
+  </channel>
+</rss>
